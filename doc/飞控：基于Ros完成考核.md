@@ -17,7 +17,7 @@ ROS是飞控组主要工作平台。[大疆OSDK](https://developer.dji.com/cn/on
 ## 工具介绍
 [ROS](https://www.ros.org/about-ros/) (Robot Operating System) 是一套用来方便开发机器人软件的开源框架。
 ## 软件安装/环境配置
-* 请大家安装 ROS 完成考核，这里 ROS 指的是经典版即 ROS 1，而非正在活跃发展中的 [ROS 2](https://index.ros.org/doc/ros2/)。
+这里推荐大家安装 ROS 完成考核，这里 ROS 指的是经典版即 ROS 1，如果感兴趣的可以尝试[ROS 2](https://index.ros.org/doc/ros2/)。
 ### Ubuntu
 跟随官方教程
 
