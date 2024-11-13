@@ -25,7 +25,7 @@ Revice：@skyswordx
 4. 熟悉 linux shell 的使用。
 	-  熟练掌握 linux 的基本命令
 
-5. 安装 `ros`；学习使用 `ros`
+5. 安装 `ROS`；学习使用 `ROS`
 	- ROS 的版本目前使用 ROS1 即可
 	- 可以参考[资料](../../doc/参考资料.md)里面给出的链接
 
