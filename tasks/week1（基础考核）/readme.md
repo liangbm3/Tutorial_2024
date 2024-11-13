@@ -16,7 +16,7 @@ Revice：@skyswordx
     - 注意，视觉组的同学如果使用 WSL，还要使用连接在本机的摄像头的话，可以参考[环境配置与准备中的 WSL 部分](./doc/环境配置与准备.md) 
 
 2. 学习 Git，熟悉 GitHub 的使用
-	- 参考考核仓库给出的教程 [基于Git和Github完成考核](../../doc/基于git和GitHub完成考核任务.md)
+	- 参考考核仓库给出的教程 [基于Git和Github完成考核](../../doc/基于Git和GitHub完成考核任务.md)
 
 3. 学习 makefile 和 cmake 的使用，清楚 makefile 与 cmake 的关系。
     - 能够自己编写 makefile 和 cmake 文件，将 cpp 源文件编译成可执行文件
