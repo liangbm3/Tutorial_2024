@@ -1,6 +1,8 @@
 # SYSU AERO-SWIFT 2024 秋季考核
 
-![Swift Team Logo](./logo.jpg)
+<p align="center">
+  <img src="./logo.png" alt="Swift Team Logo" width="500"/>
+</p>
 
 **欢迎来到中大空中机器人队 2024 秋季考核任务。下面是一些关于考核和工程的相关说明。**
 

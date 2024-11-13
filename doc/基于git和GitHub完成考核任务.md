@@ -13,22 +13,20 @@ Revise：@LinHuangnan @hyjack-00 @liangbm3
 
 ## 1. 前言
 
-该部分将会介绍如何使用git作为版本管理语言，GitHub作为仓库来进行本次考核。
+该部分将会介绍如何使用 `git` 作为版本管理语言，GitHub作为仓库来进行本次考核。
 
-- 首先会对git的一些基本概念进行介绍
+- 首先会对 `git` 的一些基本概念进行介绍
 
 - 之后将介绍如何在 **Windows** 和**Linux**两个操作系统下完成考核。**Windows**操作系统下更着重于图形化界面的操作，而**Linux**操作系统下更注重命令行操作。如果你的目标是学到完整的项目管理，请专注学习Linux部分
 
-关于git语言这里不进行更多的阐述，给出四个参考
+关于 `git` 语言的语法在这里不进行更多的阐述，给出四个学习链接来参考
 
-- [git官方文档](https://git-scm.com/book/zh/v2)
+- [git 官方文档](https://git-scm.com/book/zh/v2) 要养成看官方文档的习惯，有时候官方文档会比网上找的教程覆盖更全面
+- [基于 java 的 git 学习网站](https://learngitbranching.js.org/?locale=zh_CN) 这种在线动手实践的资源也可以好好利用
+- [B 站上比较好的 git 教程](https://www.bilibili.com/video/BV1pW411A7a5?share_source=copy_web&vd_source=34ed110d766ac5910b35ccc9afedda6e) 视频一类的教程可以更快更直观的建立感性理解和手把手实践
+- [个人的博客总结](https://liangbm3.top/2024/10/19/git%E7%9A%84%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/) 大佬的博客可以提供一些精准的参考，覆盖到官方文档没有列出来的问题
 
-- [基于java的git学习网站](https://learngitbranching.js.org/?locale=zh_CN)
-
-- [B站上比较好的git教程](https://www.bilibili.com/video/BV1pW411A7a5?share_source=copy_web&vd_source=34ed110d766ac5910b35ccc9afedda6e)
-- [个人博客总结](https://liangbm3.top/2024/10/19/git%E7%9A%84%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/)
-
-**注** 由于github容易出现域名污染，所以可能会出现登不上以及图片加载不成功的情况这里有条件的同学可以科学上网，如果不行请在提交时多试几次，针对图片问题可以将仓库clone到本地后进行查看。 
+**注** 由于 github 容易出现域名污染，所以可能会出现登不上以及图片加载不成功的情况这里有条件的同学可以科学上网，如果不行请在提交时多试几次，针对图片问题可以将仓库 clone 到本地后进行查看。 
 
 ## 2. Git的基本概念
 
