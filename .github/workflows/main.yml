@@ -10,18 +10,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Setup Git
         run: |
-          git config --global user.name lbm
-          git config --global user.email 3095088766@qq.com
+          git config --global user.name "lbm"
+          git config --global user.email "3095088766@qq.com"
 
       - name: Sync main to all branches
         run: |
-          # 获取所有分支，排除 main 分支
           branches=$(git for-each-ref --format '%(refname:short)' refs/heads/ | grep -v '^main$')
-          # 遍历每个分支并同步 main 更新
           for branch in $branches; do
             git checkout "$branch"
             git merge main || true
