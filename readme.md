@@ -41,3 +41,9 @@
 ##### Server & Client
 
 通过 `Ros2`, `C++` 编写了服务器客户端交互 `package`。
+
+其中，使用了自己编写的接口包 `my_interfaces`。
+
+效果图：
+
+![](pic1.png)
