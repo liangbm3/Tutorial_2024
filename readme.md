@@ -12,9 +12,9 @@
 - [x] task1 斐波那契数列
 - [x] task2 $\rm LinuxShell$
     实现了简单的`book.sh`
-- [ ] task3 $\rm Ros$ 通信机制
+- [x] task3 $\rm Ros$ 通信机制
   - [x] 简单话题通信和自定义消息
-  - [ ] 简单服务通信
+  - [x] 简单服务通信
 
 ### 实现方式
 
@@ -37,3 +37,7 @@
 ##### Publisher & Subscriber
 
 通过 `Ros2`, `C++` 编写了单个发布节点到单个订阅节点的 `package`。
+
+##### Server & Client
+
+通过 `Ros2`, `C++` 编写了服务器客户端交互 `package`。
