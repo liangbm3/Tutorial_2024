@@ -1,0 +1,6 @@
+int64 a
+int64 b
+---
+int64 sum
+int64 prod
+int64 dif
