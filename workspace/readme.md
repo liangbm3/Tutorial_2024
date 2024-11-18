@@ -46,4 +46,4 @@
 
 效果图：
 
-![](pic1.png)
+![](./resources/pic1.png)
