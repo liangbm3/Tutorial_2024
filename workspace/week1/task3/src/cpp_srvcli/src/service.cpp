@@ -7,10 +7,9 @@ void op(const std::shared_ptr<my_interfaces::srv::TwoInts::Request>  request,
     response->sum = request->a + request->b;
     response->prod = request->a * request->b;
     response->dif = request->a - request->b;
-    RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Incoming request\na: %ld" " b: %ld\n", request->a, request->b);
-    RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "sending back response: [%ld]", (long int)response->sum);
-    RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "sending back response: [%ld]", (long int)response->prod);
-    RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "sending back response: [%ld]", (response->dif == 0) ? (long int)0 : (long int)1);
+    RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Incoming request\na: %ld" " b: %ld", request->a, request->b);
+    RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "sending back response: Sum: [%lld], Prod: [%lld], Diff: [%d]\n", 
+        (long long)response->sum, (long long)response->prod, response->dif == 0 ? 0 : 1);
 }
 
 int main(int argc, char **argv) {
