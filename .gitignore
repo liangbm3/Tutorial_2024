@@ -1,0 +1,11 @@
+build
+devel
+install
+*.cmake
+*.a
+CMakeCache.txt
+*.tcl
+Testing
+CMakeFiles
+*.o
+*.json
