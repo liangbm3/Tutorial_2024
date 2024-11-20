@@ -54,7 +54,7 @@
 
 ### 算法执行结果：
 
-![](/home/sk/Tutorial_2024/workspace/Task1/image/Screenshot from 2024-11-20 09-02-21.png)
+![](https://github.com/skoyhs/Tutorial_2024/blob/main/workspace/Task1/image/Screenshot%20from%202024-11-20%2009-02-21.png?raw=true)
 
 ### 任务完成情况：
 
@@ -153,7 +153,7 @@ usage
 
 ### 任务执行结果：
 
-![](/home/sk/Tutorial_2024/workspace/Task1/image/Screenshot from 2024-11-17 14-35-45.png)
+![](https://github.com/skoyhs/Tutorial_2024/blob/main/workspace/Task1/image/Screenshot%20from%202024-11-17%2014-35-45.png?raw=true)
 
 ### 任务完成情况：
 
@@ -278,7 +278,7 @@ usage
 
 ### 任务执行结果：
 
-![](/home/sk/Tutorial_2024/workspace/Task1/image/Screenshot from 2024-11-20 10-30-27.png)
+![](https://github.com/skoyhs/Tutorial_2024/blob/main/workspace/Task1/image/Screenshot%20from%202024-11-20%2010-30-27.png?raw=true)
 
 ### 3.2 简单服务通信
 
@@ -366,7 +366,7 @@ usage
 
 ### 任务执行结果：
 
-![](/home/sk/Tutorial_2024/workspace/Task1/image/Screenshot from 2024-11-20 20-10-22.png)
+![](https://github.com/skoyhs/Tutorial_2024/blob/main/workspace/Task1/image/Screenshot%20from%202024-11-20%2020-10-22.png?raw=true)
 
 ### 任务完成情况：
 
