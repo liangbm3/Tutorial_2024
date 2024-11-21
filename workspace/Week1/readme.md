@@ -46,7 +46,7 @@ int main() {
     std::cout << getFibonacci(n) << std::endl;
     return 0;
 }
-
+```
 - [CMakeLists.txt](./Week1Task1/CMakeLists.txt)
 ```cmake
 #指定所需的最低 CMake 版本
