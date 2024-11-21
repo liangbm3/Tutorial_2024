@@ -1,0 +1,6 @@
+int8 a
+int8 b
+---
+int8 sum
+int8 product
+string equal
