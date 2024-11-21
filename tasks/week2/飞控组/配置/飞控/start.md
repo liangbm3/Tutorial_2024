@@ -1,6 +1,7 @@
 # 欢迎来到飞控指南！
 
-贡献者：@squarepantsbobsponge @cakerdsp
+Author：@squarepantsbobsponge @cakerdsp  
+Revise: @liangbm3
 
 在这里，你会了解到基本的有关PX4的相关知识。
 
@@ -13,9 +14,9 @@
 * px4的环境配置可能有点麻烦和困难，放平心态耐心坚持~~
 * PX4官网：https://docs.px4.io/main/en/
 
-[toc]
 
-## 一：PX4介绍：
+
+## 一、PX4介绍：
 
 PX4，通常指的是Pixhawk 4（简称PX4）飞控，这是一款在无人机领域广泛应用的飞行控制系统。Pixhawk系列飞控由知名的无人机开源硬件和软件提供商ArduPilot或APM（Ardupilot Mega）开发，而PX4作为其中的一员，集成了先进的传感器、处理器和通信技术，为无人机提供了稳定、可靠的飞行控制。
 
@@ -29,7 +30,7 @@ PX4飞控的核心特点包括：
 6. **稳定性和可靠性**：Pixhawk系列飞控以其出色的稳定性和可靠性而闻名，PX4也不例外。它经过严格的测试和验证，能够在各种复杂环境中保持稳定的飞行控制。
 7. **兼容性**：PX4飞控兼容多种无人机机架和动力系统，适用于从小型多旋翼到大型固定翼等多种类型的无人机。
 
-## 二：PX4飞控源码的下载
+## 二、PX4飞控源码的下载
 
 [参考资料](https://docs.px4.io/main/zh/dev_setup/dev_env_linux_ubuntu.html)
 
@@ -37,33 +38,33 @@ PX4飞控的核心特点包括：
 
 1. 首先在ubuntu中下载好git（在之前你可以先更新升级一下软件包）。输入以下命令（温馨提示：ubuntu输入密码时是不会显示的，所以盲打完回车就行）：
 
-```
-sudo apt-get install git
-```
+   ```
+   sudo apt-get install git
+   ```
 
 2. 在你想要放置PX4源码的路径下打开终端，输入以下命令来拉取PX4仓库：
 
-```
-git clone https://github.com/PX4/PX4-Autopilot.git 
-```
+   ```
+   git clone https://github.com/PX4/PX4-Autopilot.git 
+   ```
 
 * *由于网络原因，这一步非常非常玄学，可能一次成功，也可能要试亿次，比较折磨心态，有条件可以在ubuntu里面挂个代理。*
 
-![1728273286246](image/readme/1728273286246.png "网络原因导致连接失败")
+   ![1728273286246](image/readme/1728273286246.png "网络原因导致连接失败")
 
 * **如果你受够了github的繁文缛节，那么，接下来的命令可以摆脱github带来的网络困扰。这个命令直接从国内网站gitee上拉取而不经过github，[参考连接](https://www.cnblogs.com/yunmeng-shi/p/16330819.html#:~:text=%E8%8B%A5%E8%AF%A5%E6%AD%A5%E9%AA%A4%E5%87%BA%E9%94%99%EF%BC%8C%E5%BD%92%E6%A0%B9%E5%88%B0)**：
 
-```
-git clone https://gitee.com/syre/PX4-Autopilot.git
-```
+   ```
+   git clone https://gitee.com/syre/PX4-Autopilot.git
+   ```
 
 * **如果这个网站万一失效了，也可以换成github的镜像网站和gitee上的其他PX4网站进行拉取。**
 * *如果你执意要在github上拉取且由于网络问题多次失败，那么假如你的主机有代理，可以让你的虚拟机也用主机的代理，教程连接如下：*[虚拟机使用主机代理](https://blog.csdn.net/weixin_63594197/article/details/138069939)
 * *如果拉取过程中出现报错如下，看下面的连接：*
 
-![1728272673648](image/readme/1728272673648.png)
+   ![1728272673648](image/readme/1728272673648.png)
 
-[git报错：The TLS connection was non-properly terminated.](https://blog.csdn.net/qq_42921511/article/details/120551306)
+   [git报错：The TLS connection was non-properly terminated.](https://blog.csdn.net/qq_42921511/article/details/120551306)
 
 *PS：上面连接中解决报错的第一种方法会导致只有root用户才有权限操作拉取的PX4-Autopilot文件夹，所以如果你使用第一种方法解决问题，那么你还需要通过如下命令添加普通用户的权限（其实是打开了该文件夹的所有权限）：*
 
@@ -85,21 +86,27 @@ bash ./PX4-Autopilot/Tools/setup/ubuntu.sh
 
 这个命令会自动帮你配置编译所需环境，十分方便。
 
-## 三：MAVROS配置
+## 三、MAVROS配置
 
 ### 1. MAVROS相关介绍
 
 * **MAVROS**
 
-MAVROS，全称是“Micro Air Vehicle ROS”，是一个用于与MAVLink协议兼容的飞控进行通信的ROS（Robot Operating System，机器人操作系统）包。它主要起到无人机与ROS系统之间的桥梁作用，负责将ROS系统中的指令转换为飞控可以理解的信号，同时也将飞控的传感器数据和状态信息转换为ROS系统可以理解的格式。
+   MAVROS，全称是“Micro Air Vehicle ROS”，是一个用于与MAVLink协议兼容的飞控进行通信的ROS（Robot Operating System，机器人操作系统）包。它主要起到无人机与ROS系统之间的桥梁作用，负责将ROS系统中的指令转换为飞控可以理解的信号，同时也将飞控的传感器数据和状态信息转换为ROS系统可以理解的格式。
 
 * **MAVLink**
 
-MAVLink是一种轻量级、二进制的消息传输协议，广泛应用于无人机和机器人系统中，用于系统与控制台或地面站之间的通信。它具有轻量级、可靠性、灵活性、标准化和跨平台等特点，使得不同设备间能够有效通信。MAVLink消息使用小于255字节的包，非常适合带宽有限的无线电链路，并且每条消息都有一个序列号，以帮助接收方检测丢失或重复的消息。
+   MAVLink是一种轻量级、二进制的消息传输协议，广泛应用于无人机和机器人系统中，用于系统与控制台或地面站之间的通信。它具有轻量级、可靠性、灵活性、标准化和跨平台等特点，使得不同设备间能够有效通信。MAVLink消息使用小于255字节的包，非常适合带宽有限的无线电链路，并且每条消息都有一个序列号，以帮助接收方检测丢失或重复的消息。
 
-* **MAVROS与MAVLink**：MAVROS是一个ROS扩展包，它利用MAVLink协议与无人机飞控进行通信。MAVROS通过解析和封装MAVLink消息，实现了ROS系统与无人机飞控之间的数据交换和控制指令的发送。
-* **MAVLink与PX4**：MAVLink是PX4飞控与地面站或ROS系统（通过MAVROS）进行通信的协议。PX4飞控使用MAVLink协议发送和接收数据，实现了与ROS系统或其他控制台的通信和控制。
-* **MAVROS与PX4**：通过MAVLink协议，MAVROS能够与PX4飞控进行通信和控制。MAVROS将ROS系统中的指令转换为MAVLink消息发送给PX4飞控，同时也将PX4飞控发送的MAVLink消息转换为ROS系统可以理解的格式。
+* **MAVROS与MAVLink**
+  
+   MAVROS是一个ROS扩展包，它利用MAVLink协议与无人机飞控进行通信。MAVROS通过解析和封装MAVLink消息，实现了ROS系统与无人机飞控之间的数据交换和控制指令的发送。
+* **MAVLink与PX4**
+  
+  MAVLink是PX4飞控与地面站或ROS系统（通过MAVROS）进行通信的协议。PX4飞控使用MAVLink协议发送和接收数据，实现了与ROS系统或其他控制台的通信和控制。
+* **MAVROS与PX4**
+  
+  通过MAVLink协议，MAVROS能够与PX4飞控进行通信和控制。MAVROS将ROS系统中的指令转换为MAVLink消息发送给PX4飞控，同时也将PX4飞控发送的MAVLink消息转换为ROS系统可以理解的格式。
 
 ### 2. MAVROS安装
 
@@ -142,7 +149,7 @@ export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:~/PX4-Autopilot/Tools/sitl_gazebo
  source .bashrc
 ```
 
-## 四：仿真初尝
+## 四、仿真初尝
 
 ### 1. 仿真软件和地面站介绍：
 
@@ -170,25 +177,25 @@ QGC的安装教程很多，大家可以自行搜索，注意要安装在你的�
 
 * 在PX4-Autopilot文件夹下，输入以下命令来开启gazebo仿真，这里选用的是四旋翼模型：
 
-```
-make px4_sitl_default gazebo
-```
+   ```
+   make px4_sitl_default gazebo
+   ```
 
 * *初始编译会耗费比较长的时间。由于版本问题，编译过程中可能会出现意想不到的错误。目前已知在所有配置完备的情况下，v1.13.3正常编译没有问题，而v1.14版本可能会出现如下报错：*
 
-![1728288386765](image/start/1728288386765.png)
+   ![1728288386765](image/start/1728288386765.png)
 
    *这是因为生成的文件位置不对，找到PX4-Autopilot/build/你对应编译生成的文件夹/src/modules/uxrce_dds_client/lib，把那两个文件放入x86_64-linux-gnu即可。*
 
-![1728288639122](image/start/1728288639122.png)
+   ![1728288639122](image/start/1728288639122.png)
 
-然后继续重新运行
+   然后继续重新运行
 
-```
-make px4_sitl_default gazebo
-```
+   ```
+   make px4_sitl_default gazebo
+   ```
 
-*即可。*
+   *即可。*
 
 * build文件夹是编译目标目录，只有经过至少一次编译才会生成此文件夹，内部存放的是源码经过编译生成的编译选项、中间文件、目标文件等。编译不同版本的固件会生成不同的文件夹。
 
@@ -198,15 +205,15 @@ make px4_sitl_default gazebo
 
   编译完成后，会在PX4-Autopilot文件夹下面的build文件夹下生成对应的编译文件，点击进去之后可以看见生成的文件，由于是仿真	编译，因此在该文件夹下并没有任何可以供固件“刷”的.px4文件。
 
-![1728288827047](image/start/1728288827047.png)
+   ![1728288827047](image/start/1728288827047.png)
 
     下图展示了正式编译后会生成的.px4文件。
 
-![1728286951125](image/readme/1728286951125.png)
+   ![1728286951125](image/readme/1728286951125.png)
 
 * 在成功运行仿真命令后，会进入nuttx的shell界面中（简称nsh），同时出现gazebo仿真界面：
 
-![1728288987936](image/start/1728288987936.png)
+   ![1728288987936](image/start/1728288987936.png)
 
     （如果想要看是否配置成功，可以在控制台输入commander takeoff，能看到gazebo中的无人机成功起飞）
 
@@ -218,103 +225,101 @@ make px4_sitl_default gazebo
 
 * **飞机起始点的设置**
 
-QGC的飞机起始地点一般是默认的，一般为了方便我们的设点需求，我们需要修改它的初始地点，通过以下命令来设置飞机的初始点：
+   QGC的飞机起始地点一般是默认的，一般为了方便我们的设点需求，我们需要修改它的初始地点，通过以下命令来设置飞机的初始点：
 
-```
-export PX4_HOME_LAT=38.55812805
-export PX4_HOME_LON=115.14054632
-export PX4_HOME_ALT=0
-make px4_sitl_default gazebo_plane
-```
+   ```
+   export PX4_HOME_LAT=38.55812805
+   export PX4_HOME_LON=115.14054632
+   export PX4_HOME_ALT=0
+   make px4_sitl_default gazebo_plane
+   ```
 
-前三个命令来对飞机的经纬高进行设置，在设置完自己的经纬高后，运行仿真即可，不过这个只是在当前的shell中临时设置环境变量，当你重新打开另一个终端时就会失效，如果想要永久设置，可以用以下的两个方法（选其一即可）：
+   前三个命令来对飞机的经纬高进行设置，在设置完自己的经纬高后，运行仿真即可，不过这个只是在当前的shell中临时设置环境变量，当你重新打开另一个终端时就会失效，如果想要永久设置，可以用以下的两个方法（选其一即可）：
 
-1. [参考连接](https://discuss.px4.io/t/drone-spawn-position-setup/31970/9)
+  1. [参考连接](https://discuss.px4.io/t/drone-spawn-position-setup/31970/9)
 
-找到 /your_px4_path/PX4-Autopilot/Tools/simulation/gazebo-classic/sitl_gazebo-classic/worlds。 这个文件夹存放着仿真用到的所有场景（world），当你不去指定时，默认运行empty.world，如果指定了仿真环境，则打开对应场景的文件。
-   打开后，找到以下几行，如果没有，则添加：
+      找到 /your_px4_path/PX4-Autopilot/Tools/simulation/gazebo-classic/sitl_gazebo-classic/worlds。 这个文件夹存放着仿真用到的所有场景（world），当你不去指定时，默认运行empty.world，如果指定了仿真环境，则打开对应场景的文件。
+         打开后，找到以下几行，如果没有，则添加：
 
-```
-   <spherical_coordinates>
-         <latitude_deg>38.55812805</latitude_deg>
-         <longitude_deg>115.14054632</longitude_deg>
-         <altitude>0</altitude>
-   </spherical_coordinates>
-```
+      ```
+         <spherical_coordinates>
+               <latitude_deg>38.55812805</latitude_deg>
+               <longitude_deg>115.14054632</longitude_deg>
+               <altitude>0</altitude>
+         </spherical_coordinates>
+      ```
 
-   ![1728296992244](image/start/1728296992244.png)
+      ![1728296992244](image/start/1728296992244.png)
 
-   其中的数据换成自己想要的坐标即可。
-2.
+      其中的数据换成自己想要的坐标即可。
+  2. 我们只需要把PX4_HOME_LAT等环境变量永久保存即可。在任意终端输入：
 
-我们只需要把PX4_HOME_LAT等环境变量永久保存即可。在任意终端输入：
+      ```
+      gedit ~/.bashrc
+      ```
 
-```
-gedit ~/.bashrc
-```
+      然后在最后几行输入：
 
-然后在最后几行输入：
+      ```
+      export PX4_HOME_LAT=38.55812805
+      export PX4_HOME_LON=115.14054632
+      export PX4_HOME_ALT=0
+      ```
 
-```
-export PX4_HOME_LAT=38.55812805
-export PX4_HOME_LON=115.14054632
-export PX4_HOME_ALT=0
-```
+      这个示意图片里面的PX4_HOME_LON是为了测试所以改成110了，不用在意。
 
-这个示意图片里面的PX4_HOME_LON是为了测试所以改成110了，不用在意。
+      ![1728297518058](image/start/1728297518058.png)
 
-![1728297518058](image/start/1728297518058.png)
+      然后刷新变量：
 
-然后刷新变量：
+      ```
+      source ~/.bashrc
+      ```
 
-```
-source ~/.bashrc
-```
+      这样变量就会永久保存在任意一个打开的shell里面了。
 
-这样变量就会永久保存在任意一个打开的shell里面了。
-
-如果你想修改坐标，那么在.bashrc中修改后都要source一下，之后的shell才会获取更新的值。
+      如果你想修改坐标，那么在.bashrc中修改后都要source一下，之后的shell才会获取更新的值。
 
 * **飞机在QGC中的朝向的修改**
 
-这里以四旋翼无人机为例：
+   这里以四旋翼无人机为例：
 
-启动四旋翼无人机：
+   启动四旋翼无人机：
 
-```
-make px4_sitl_default gazebo
-```
+   ```
+   make px4_sitl_default gazebo
+   ```
 
-然后找到gazebo界面，Models -> iris(不同的飞机模型这个名字不一样的)，这个下面包含了飞机模型的一些性质，找到第一个pose属性，找到yaw属性，双击修改即可，改完后就可以看见	QGC中的模型的朝向也会变化。
+   然后找到gazebo界面，Models -> iris(不同的飞机模型这个名字不一样的)，这个下面包含了飞机模型的一些性质，找到第一个pose属性，找到yaw属性，双击修改即可，改完后就可以看见	QGC中的模型的朝向也会变化。
 
-![1731746319021](image/start/1731746319021.png)
+   ![1731746319021](image/start/1731746319021.png)
 
-![1731746595545](image/start/1731746595545.png)
+   ![1731746595545](image/start/1731746595545.png)
 
-**这里注意，如果你直接改sdf文件中的pose属性是没有效果的，原因尚不清楚，如果有懂的可以提交报告时说明一下。（如果找到了原因所在额外加分！）**
+   **这里注意，如果你直接改sdf文件中的pose属性是没有效果的，原因尚不清楚，如果有懂的可以提交报告时说明一下。（如果找到了原因所在额外加分！）**
 
 3. 一般来说，我们还会习惯性打开MAVROS，不仅是代码运行时需要MAVROS通信，有时MAVROS上展示的信息也值得我们去分析。
 
-最简单的打开MAVROS的方法如下：打开新终端输入
+   最简单的打开MAVROS的方法如下：打开新终端输入
 
-```
-roslaunch mavros px4.launch fcu_url:="udp://:14540@127.0.0.1:14557"
-```
+   ```
+   roslaunch mavros px4.launch fcu_url:="udp://:14540@127.0.0.1:14557"
+   ```
 
-这是启用的仿真的MAVROS，方法很多，能启动mavros就行。
+   这是启用的仿真的MAVROS，方法很多，能启动mavros就行。
 
-MAVROS启动后界面如下：
+   MAVROS启动后界面如下：
 
-![1728289285863](image/start/1728289285863.png)
+   ![1728289285863](image/start/1728289285863.png)
 
-在nsh界面，输入（在下面直接输入就行）：
+   在nsh界面，输入（在下面直接输入就行）：
 
-```
-commander takeoff
-```
+   ```
+   commander takeoff
+   ```
 
-即可使飞机起飞，由于是固定翼，因此飞机进入盘旋状态。
+   即可使飞机起飞，由于是固定翼，因此飞机进入盘旋状态。
 
-![1728289566724](image/start/1728289566724.png)
+   ![1728289566724](image/start/1728289566724.png)
 
-恭喜你！此时你已经完成了基本的仿真配置。
+   恭喜你！此时你已经完成了基本的仿真配置。
