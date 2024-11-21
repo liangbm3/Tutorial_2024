@@ -85,7 +85,8 @@ $ make
 ```
 $ ./fibonacci
 ```
-  然后输入数据n, 按回车可得输出[结果](./Photo/1.1%20任务一运行结果.png)
+  然后输入数据n, 按回车可得输出[结果](./Photo/1.1%20任务一运行结果.png)  
+![结果](./Photo/1.1%20任务一运行结果.png)
 
 ## 任务二
 
@@ -217,7 +218,8 @@ $ chmod +x book.sh
 ./book.sh -d 2001                  # 删除书籍记录
 ./book.sh -s 2001                  # 搜索书籍记录
 ```
-
+![运行](./Photo/2.1%20任务二运行结果.png)  
+![查看修改后的文档](./Photo/2.2%20任务二运行结果.png)
 ## 任务三
 ### 工作空间配置
   首先**创建工作空间**
@@ -383,14 +385,15 @@ $ source devel/setup.bash
 ```
 $ rosrun publisher_subscriber signal_publisher
 ```
-  [即可看到数据传输](./Photo/3.1%20任务三运行结果.png)
+  [即可看到数据传输](./Photo/3.1%20任务三运行结果.png)  
+![即可看到数据传输](./Photo/3.1%20任务三运行结果.png)
 
 ### 问题二
 #### 代码内容说明
 > - Functions:   
->    包含一个**服务端Server**和一个**客户端client**的一个 **package**。客户端向服务端发送两个数字，服务端接收这两个数字并返回它们的和、乘积、是否相等(True or False)
+>     包含一个**服务端Server**和一个**客户端client**的一个 **package**。客户端向服务端发送两个数字，服务端接收这两个数字并返回它们的和、乘积、是否相等(True or False)
 > - Depend Libraries:  
->   依赖 - ros库
+>     依赖 - ros库
 #### 代码
 - [Data.srv](./Week1Task3/client_server/Data.srv)
 ```
@@ -546,4 +549,5 @@ $ source devel/setup.bash
 ```
 $ rosrun client_server data_client
 ```
-  然后输入两个数字，按enter查看[运行结果](./Photo/3.2%20任务三运行结果.png)
+  然后输入两个数字，按enter查看[运行结果](./Photo/3.2%20任务三运行结果.png)  
+![运行结果](./Photo/3.2%20任务三运行结果.png)
