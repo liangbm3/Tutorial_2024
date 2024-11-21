@@ -13,9 +13,9 @@
 
 #### 代码内容说明
 > - Functions:   
->     输入一个整数 n,计算并返回**斐波那契数列**的第 n 项
+>       输入一个整数 n,计算并返回**斐波那契数列**的第 n 项
 > - Depend Libraries:  
->     依赖 - C++标准库
+>       依赖 - C++标准库
 
 #### 代码
 - [fibonacci.cpp](./Week1Task1/fibonacci.cpp)
@@ -63,13 +63,11 @@ set(CMAKW_CXX_STANDARD_REQUIRED True)
 add_executable(fibonacci fibonacci.cpp)
 ```
 #### 编译过程
-
   为了使项目更简洁有条理，先在项目文件夹中建立 **build 文件夹**，并进入文件夹
 ```
 $ mkdir build
 $ cd build
 ```
-
   然后执行 cmake 指令
 ```
 $ cmake ..
@@ -103,8 +101,8 @@ $ ./fibonacci
 >             + 首先判断 2001 书号记录是否存在，
 >                 + 如果不存在，则给出提示；
 >                 + 如果存在，则提示用户确认是否要删除记录。
->                     + 若用户输入 y 或 yes，则删除文件中书号为 2001 的该行信息；
->                     + 若用户输入 n 或 no，则不做删除操作。
+>                     + 若用户输入 y 或 yes, 则删除文件中书号为 2001 的该行信息；
+>                     + 若用户输入 n 或 no, 则不做删除操作。
 >         + 当输入 book.sh -s 2001 时，
 >             + 首先判断 2001 书号记录是否存在，
 >                 + 如果不存在，给出提示；
@@ -205,7 +203,6 @@ main() {
 main "$@"
 ```
 #### 运行过程
-
   确保脚本和文档**在同一文件夹下**,并在 Linux 系统中给予执行权限
 ```
 $ chmod +x book.sh
@@ -242,7 +239,6 @@ $ catkin_make install
 $ source devel/setup.bash
 $ echo $ROS_PACKAGE_PATH
 ```
-
 ### 问题一
 #### 代码内容说明
 > - Functions:   
@@ -322,13 +318,13 @@ $ cd ~/publisher_subscriber/msg
 $ touch Signal_send.msg
 ```
   将 Signal_send.msg 代码粘贴进来  
-  回到 publisher_subscriber 下，修改 **package.xml 文件**,加入（66行后）
+  回到 publisher_subscriber 下，修改 **package.xml 文件**,加入(66行后)
 ```xml
   <build_depend>message_generation</build_depend>
   <exec_depend>message_runtime</exec_depend>
 ```
-  修改 **CMakeList.txt**
-  添加（15行后）
+  修改 **CMakeList.txt**  
+  添加(15行后)
 ```cmake
   message_generation
 ```
@@ -337,17 +333,17 @@ $ touch Signal_send.msg
 add_message_files(FILES Signal_send.msg)
 generate_messages(DEPENDENCIES std_msgs)
 ```
-  去掉 CATKIN_DEPENDS （114行）的注释(#)，添加
+  去掉 CATKIN_DEPENDS (114行)的注释(#)，添加
 ```
 message_runtime
 ```
-**回到工作空间根目录**，尝试编译
+  **回到工作空间根目录**，尝试编译
 ```
 $ source devel/setup.bash
 $ catkin_make
 ```
-然后进入src文件夹，将 signal_publisher.cpp 和 signal_subscriber.cpp 粘贴进来  
-再次修改**CMakeLists.txt**, 加入（158行后）
+  然后进入src文件夹, 将 signal_publisher.cpp 和 signal_subscriber.cpp 粘贴进来  
+  再次修改**CMakeLists.txt**, 加入(158行后)
 ```cmake
 add_executable(signal_publisher src/signal_publisher.cpp)
 target_link_libraries(signal_publisher ${catkin_LIBRARIES})
@@ -357,7 +353,7 @@ add_executable(signal_subscriber src/signal_subscriber.cpp)
 target_link_libraries(signal_subscriber ${catkin_LIBRARIES})
 add_dependencies(signal_subscriber ${PROJECT_NAME}_generate_message_cpp)
 ```
-**回到工作空间根目录**，尝试编译
+  **回到工作空间根目录**，尝试编译
 ```
 $ source devel/setup.bash
 $ catkin_make
@@ -485,13 +481,13 @@ $ cd ~/client_server/srv
 $ touch Data.srv
 ```
   将 Data.srv 代码粘贴进来  
-  回到 client_server 下，修改 **package.xml** 文件,加入（66行后）
+  回到 client_server 下，修改 **package.xml** 文件,加入(66行后)
 ```xml
   <build_depend>message_generation</build_depend>
   <exec_depend>message_runtime</exec_depend>
 ```
-  修改 **CMakeList.txt**
-  添加（15行后）
+  修改 **CMakeList.txt**  
+  添加(15行后)
 ```cmake
   message_generation
 ```
@@ -500,17 +496,17 @@ $ touch Data.srv
 add_message_files(FILES Data.srv)
 generate_messages(DEPENDENCIES std_msgs)
 ```
-  去掉 CATKIN_DEPENDS （114行）的注释(#)，添加
+  去掉 CATKIN_DEPENDS (114行) 的注释(#)，添加
 ```
 message_runtime
 ```
-回到工作空间根目录，尝试编译
+  回到工作空间根目录，尝试编译
 ```
 $ source devel/setup.bash
 $ catkin_make
 ```
-然后进入src文件夹，将 **data_client.cpp** 和 **data_server.cpp** 粘贴进来  
-再次修改**CMakeLists.txt**, 加入（158行后）
+  然后进入src文件夹, 将 **data_client.cpp** 和 **data_server.cpp** 粘贴进来  
+  再次修改**CMakeLists.txt**, 加入(158行后)
 ```cmake
 add_executable(data_client src/data_client.cpp)
 target_link_libraries(data_client ${catkin_LIBRARIES})
@@ -520,7 +516,7 @@ add_executable(data_server src/data_server.cpp)
 target_link_libraries(data_server ${catkin_LIBRARIES})
 add_dependencies(data_server ${PROJECT_NAME}_generate_message_cpp)
 ```
-**回到工作空间根目录**，尝试编译
+  **回到工作空间根目录**，尝试编译
 ```
 $ source devel/setup.bash
 $ catkin_make
@@ -549,5 +545,5 @@ $ source devel/setup.bash
 ```
 $ rosrun client_server data_client
 ```
-  然后输入两个数字，按enter查看[运行结果](./Photo/3.2%20任务三运行结果.png)  
+  然后输入两个数字, 按enter查看[运行结果](./Photo/3.2%20任务三运行结果.png)  
 ![运行结果](./Photo/3.2%20任务三运行结果.png)
