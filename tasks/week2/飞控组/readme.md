@@ -6,14 +6,14 @@ Revise: @liangbm3
 
 ### 学习内容：
 
-1.学习如何配置PX4环境。详细请见配置文档。
+1.学习如何配置PX4环境。详细请见[配置文档](./配置/飞控/start.md)。
 
-2.编写PX4应用程序，并且在仿真（<code>SITL </code>）中运行。
+2.编写PX4应用程序，并且在仿真（<code>SITL</code>）中运行。
 
 * 步骤1：编写简单自定义应用程序，打印 <code>Hello Sky!</code>。参考：https://docs.px4.io/main/zh/modules/hello_sky.html
-* 步骤2：在PX4-Autopilot/boards/px4/sitl/default.px4board中启用应用程序
-* 步骤3：在PX4-Autopilot/build/px4-sitl_defalut/px4_boardconfig.h中启用引用程序
-* 步骤4：在PX4-Autopilot/下编译 <code>make px4_sitl_default </code>
+* 步骤2：在`PX4-Autopilot/boards/px4/sitl/default.px4board`中启用应用程序
+* 步骤3：在`PX4-Autopilot/build/px4-sitl_defalut/px4_boardconfig.h`中启用引用程序
+* 步骤4：在P`X4-Autopilot/`下编译 <code>make px4_sitl_default </code>
 * 步骤5：启动仿真环境：
    <code>make px4_sitl_default {gazebo/gazebo-classic}(选择自己启用的仿真软件)</code>
 

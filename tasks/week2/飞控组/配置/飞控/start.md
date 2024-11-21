@@ -238,7 +238,7 @@ QGC的安装教程很多，大家可以自行搜索，注意要安装在你的�
 
   1. [参考连接](https://discuss.px4.io/t/drone-spawn-position-setup/31970/9)
 
-      找到 /your_px4_path/PX4-Autopilot/Tools/simulation/gazebo-classic/sitl_gazebo-classic/worlds。 这个文件夹存放着仿真用到的所有场景（world），当你不去指定时，默认运行empty.world，如果指定了仿真环境，则打开对应场景的文件。
+      找到 `/your_px4_path/PX4-Autopilot/Tools/simulation/gazebo-classic/sitl_gazebo-classic/worlds`。 这个文件夹存放着仿真用到的所有场景（world），当你不去指定时，默认运行empty.world，如果指定了仿真环境，则打开对应场景的文件。
          打开后，找到以下几行，如果没有，则添加：
 
       ```
