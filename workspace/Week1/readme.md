@@ -7,14 +7,14 @@
 - Version: 1.0.0
 - Abstract: 空队第一周任务说明
 
-- *Note: 需要编写的代码部分已全部完成，但所有的编译和运行部分不包含在提交的代码中，需要按文中编译运行步骤运行*
+- *Note: 需要编写的代码部分已全部完成，但所有的编译和运行部分不包含在提交的代码中，需要按文中编译运   行步骤运行*
 ---
 ## 任务一
 
 #### 代码内容说明
-> - Functions: 
+> - Functions:   
 >     输入一个整数 n,计算并返回**斐波那契数列**的第 n 项
-> - Depend Libraries:
+> - Depend Libraries:  
 >     依赖 - C++标准库
 
 #### 代码
@@ -64,8 +64,7 @@ add_executable(fibonacci fibonacci.cpp)
 ```
 #### 编译过程
 
-  为了使项目更简洁有条理，先在项目文件夹中建立 **build 文件夹**
-  并进入文件夹
+  为了使项目更简洁有条理，先在项目文件夹中建立 **build 文件夹**，并进入文件夹
 ```
 $ mkdir build
 $ cd build
@@ -210,7 +209,7 @@ main "$@"
 ```
 $ chmod +x book.sh
 ```
-  然后可以通过以下程序[运行](./Photo/2.1%20任务二运行结果.png)
+  然后可以通过以下程序[运行](./Photo/2.1%20任务二运行结果.png),  
   再次点开 book.txt 可以[查看修改后的文档](./Photo/2.2%20任务二运行结果.png)
 ```
 ./book.sh                          # 列出所有书籍记录
@@ -244,10 +243,10 @@ $ echo $ROS_PACKAGE_PATH
 
 ### 问题一
 #### 代码内容说明
-> - Functions: 
+> - Functions:   
 >     包含一个**信息发布节点 Publisher**，和一个**信息订阅节点 Subscriber**的**package**。
 >     信息发布节点产生随机数据并发布自己创建的自定义消息类型，信息订阅节点订阅话题并将数据输出到终端。
-> - Depend Libraries:
+> - Depend Libraries:  
 >     依赖 - ros库
 #### 代码
 - [signal_send.msg](./Week1Task3/publisher_subscriber/Signal_send.msg)
@@ -320,7 +319,7 @@ $ mkdir msg
 $ cd ~/publisher_subscriber/msg
 $ touch Signal_send.msg
 ```
-  将 Signal_send.msg 代码粘贴进来
+  将 Signal_send.msg 代码粘贴进来  
   回到 publisher_subscriber 下，修改 **package.xml 文件**,加入（66行后）
 ```xml
   <build_depend>message_generation</build_depend>
@@ -345,7 +344,7 @@ message_runtime
 $ source devel/setup.bash
 $ catkin_make
 ```
-然后进入src文件夹，将 signal_publisher.cpp 和 signal_subscriber.cpp 粘贴进来
+然后进入src文件夹，将 signal_publisher.cpp 和 signal_subscriber.cpp 粘贴进来  
 再次修改**CMakeLists.txt**, 加入（158行后）
 ```cmake
 add_executable(signal_publisher src/signal_publisher.cpp)
@@ -366,7 +365,7 @@ $ catkin_make
 ```
 $ roscore
 ```
-  在工作区 catkin_ws 下打开终端
+  在工作区 catkin_ws 下打开终端  
   先设置**环境变量**
 ```
 $ source devel/setup.bash
@@ -375,7 +374,7 @@ $ source devel/setup.bash
 ```
 $ rosrun publisher_subscriber signal_subscriber
 ```
-  在工作区 catkin_ws 下打开终端
+  在工作区 catkin_ws 下打开终端  
   先设置**环境变量**
 ```
 $ source devel/setup.bash
@@ -388,9 +387,9 @@ $ rosrun publisher_subscriber signal_publisher
 
 ### 问题二
 #### 代码内容说明
-> - Functions: 
+> - Functions:   
 >    包含一个**服务端Server**和一个**客户端client**的一个 **package**。客户端向服务端发送两个数字，服务端接收这两个数字并返回它们的和、乘积、是否相等(True or False)
-> - Depend Libraries:
+> - Depend Libraries:  
 >   依赖 - ros库
 #### 代码
 - [Data.srv](./Week1Task3/client_server/Data.srv)
@@ -482,7 +481,7 @@ $ mkdir srv
 $ cd ~/client_server/srv
 $ touch Data.srv
 ```
-  将 Data.srv 代码粘贴进来
+  将 Data.srv 代码粘贴进来  
   回到 client_server 下，修改 **package.xml** 文件,加入（66行后）
 ```xml
   <build_depend>message_generation</build_depend>
@@ -507,7 +506,7 @@ message_runtime
 $ source devel/setup.bash
 $ catkin_make
 ```
-然后进入src文件夹，将 **data_client.cpp** 和 **data_server.cpp** 粘贴进来
+然后进入src文件夹，将 **data_client.cpp** 和 **data_server.cpp** 粘贴进来  
 再次修改**CMakeLists.txt**, 加入（158行后）
 ```cmake
 add_executable(data_client src/data_client.cpp)
@@ -529,7 +528,7 @@ $ catkin_make
 ```
 $ roscore
 ```
-  在工作区 catkin_ws 下打开终端
+  在工作区 catkin_ws 下打开终端  
   先设置**环境变量**
 ```
 $ source devel/setup.bash
@@ -538,7 +537,7 @@ $ source devel/setup.bash
 ```
 $ rosrun client_server data_server
 ```
-  在工作区 catkin_ws 下打开另一个终端
+  在工作区 catkin_ws 下打开另一个终端  
   先设置**环境变量**
 ```
 $ source devel/setup.bash
