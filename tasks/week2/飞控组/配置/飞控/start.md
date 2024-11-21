@@ -129,8 +129,8 @@ sudo ./install_geographiclib_datasets.sh
 需要在 .bashrc 中添加px4源码
 
 ```
-gedit .bashrc
-//打开 .bashrc
+gedit ~/.bashrc
+//打开 ~/.bashrc
 ```
 
 添加如下：(这个有点玄学，如果后续有相关报错，需要自行搜索，下面的路径要替换成自己PX4源码的路径)
@@ -146,14 +146,14 @@ export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:~/PX4-Autopilot/Tools/sitl_gazebo
 添加完保存后需要在命令行：
 
 ```
- source .bashrc
+ source ~/.bashrc
 ```
 
 ## 四、仿真初尝
 
 ### 1. 仿真软件和地面站介绍：
 
-* 仿真软件一般可以用 `<code>`gazebo `</code>`，`<code>`gazebo-classic `</code>`，这个在ros中是自带的，可以在终端输入gazebo或者gazebo-classic看是否存在
+* 仿真软件一般可以用 <code>gazebo </code>，<code>gazebo-classic </code>，这个在ros中是自带的，可以在终端输入gazebo或者gazebo-classic看是否存在
 * QGC地面站，即QGroundControl，是一款开源的无人机地面站软件，专为无人机操作员设计。以下是对QGC地面站的详细介绍：
 
   1. **无人机控制**：QGC地面站提供了对无人机的全面控制功能，包括起飞、降落、悬停、飞行轨迹调整等。
