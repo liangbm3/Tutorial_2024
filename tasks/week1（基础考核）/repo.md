@@ -417,7 +417,7 @@ int main(int argc, char **argv)
 }
 ```
 
-#### 接着修改依赖。
+#### 3.2.3 接着修改依赖
 `CMakeLists.txt`文件里面要加上`message_generation`包、服务接口、服务端和客户端的可执行文件等。
 
 `package.xml`文件里面要加上`message_generation`的依赖。
@@ -467,7 +467,7 @@ catkin_make
 source devel/setup.bash
 ```
 
-#### 3.1.4 测试结果
+#### 3.2.4 测试结果
 先运行roscore
 
 左侧运行服务端节点rosrun math_service math_server
