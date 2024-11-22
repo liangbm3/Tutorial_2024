@@ -1,0 +1,3 @@
+/home/lindaaaa/Desktop/Tutorial_2024/tasks/week1（基础考核）/build/CMakeFiles/rebuild_cache.dir
+/home/lindaaaa/Desktop/Tutorial_2024/tasks/week1（基础考核）/build/CMakeFiles/edit_cache.dir
+/home/lindaaaa/Desktop/Tutorial_2024/tasks/week1（基础考核）/build/CMakeFiles/Fibonacci.dir
