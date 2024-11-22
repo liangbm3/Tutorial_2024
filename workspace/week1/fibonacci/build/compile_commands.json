@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/prowance/fibonacci/build",
+  "command": "/usr/bin/g++    -g   -o CMakeFiles/fibonacci.dir/main.cpp.o -c /home/prowance/fibonacci/main.cpp",
+  "file": "/home/prowance/fibonacci/main.cpp"
+}
+]
