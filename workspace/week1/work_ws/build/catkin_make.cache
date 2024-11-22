@@ -1,0 +1,2 @@
+work1:work_pkg
+-DCATKIN_DEVEL_PREFIX=/home/prowance/work_ws/devel -DCMAKE_INSTALL_PREFIX=/home/prowance/work_ws/install -G Unix Makefiles
