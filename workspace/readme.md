@@ -171,6 +171,8 @@ esac
 ##### task3
 由于无法连接到github上传输软件源，下载多次失败，进度截止到ros的更新安装，这是目前的一些进度照片
 
-![进度]()
+![进度](https://github.com/nulidedoupier/Tutorial_2024/blob/main/workspace/image/3.png)
+
+更多参考task任务的补充参考image文件夹
 
 
