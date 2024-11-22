@@ -2,31 +2,31 @@
 
 ## 任务1
 
-[任务1执行结果].(/image/p1.png)
+[任务1执行结果](/image/p1.png)
 
 ## 任务2
 
-[任务2执行结果1].(/image/p2.png)
+[任务2执行结果1](/image/p2.png)
 
-[任务2执行结果2].(/image/p3.png)
+[任务2执行结果2](/image/p3.png)
 
-[任务2执行结果3].(/image/p4.png)
+[任务2执行结果3](/image/p4.png)
 
-[任务2执行结果4].(/image/p5.png)
+[任务2执行结果4](/image/p5.png)
 
 ## 任务3
 
 ### 3.1
 
-[任务3.1执行结果1].(/image/p6.png)
+[任务3.1执行结果1](/image/p6.png)
 
-[任务3.1执行结果2].(/image/p7.png)
+[任务3.1执行结果2](/image/p7.png)
 
 ### 3.2
 
-[任务3.2执行结果1].(/image/p8.png)
+[任务3.2执行结果1](/image/p8.png)
 
-[任务3.2执行结果2].(/image/p9.png)
+[任务3.2执行结果2](/image/p9.png)
 
 # 解答思路
 
