@@ -62,8 +62,8 @@ add_executable(Fibonacci main.cpp)
 
 #### 1.4测试
 测试结果如下图。
-![alt text](<task1/2024-11-20 21-03-29屏幕截图.png>)
-![alt text](<task1/2024-11-20 21-04-23屏幕截图.png>)
+![alt text](task1_1.png)
+![alt text](task1_2.png)
 
 
 ### 2. Linux Shell
@@ -152,8 +152,8 @@ fi
 
 #### 1.3测试
 测试结果如下图。
-![alt text](<2024-11-20 21-29-09屏幕截图.png>)
-![alt text](<2024-11-20 22-38-27屏幕截图.png>)
+![alt text](task2_1.png)
+![alt text](task2_2.png)
 
 ### 3. ROS通信机制
 
@@ -312,7 +312,7 @@ rosrun random_data_pubsub subscriber_node
 左侧运行发布者节点
 
 右侧运行订阅者节点
-![alt text](<2024-11-22 17-51-17屏幕截图.png>)
+![alt text](task3.1.png)
 - ps.在打开新的终端时要重新source一下```source ~/catkin_ws/devel/setup.bash```,然后使用```rospack find random_data_pubsub```命令可以确认包是否能够找到。
 
 
@@ -470,4 +470,4 @@ source devel/setup.bash
 左侧运行服务端节点rosrun math_service math_server
 
 右侧运行客户端rosrun math_service math_client 10 5 
-![alt text](<2024-11-22 16-40-15屏幕截图.png>)
+![alt text](task3.2.png)
