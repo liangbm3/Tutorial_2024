@@ -64,4 +64,4 @@ int main() {
 
 linux终端界面和cmake、makefile的编译示例：
 
-![linux图形界面示例]（）
+![linux图形界面示例]（https://github.com/nulidedoupier/Tutorial_2024/blob/main/workspace/image/1.png）
