@@ -1,0 +1,8 @@
+prefix=/home/kanning/projects/Tutorial/workspace/week1/ROS_ws/devel
+
+Name: package_pub_sub
+Description: Description of package_pub_sub
+Version: 0.0.0
+Cflags: -I/home/kanning/projects/Tutorial/workspace/week1/ROS_ws/devel/include
+Libs: -L${prefix}/lib 
+Requires: roscpp std_msgs message_runtime
