@@ -17,9 +17,9 @@ add_custom_target(work1_generate_messages ALL)
 
 
 
-get_filename_component(_filename "/home/prowance/work_ws/src/work1/srv/AddTwoInts.srv" NAME_WE)
+get_filename_component(_filename "/home/prowance/Tutorial_2024/workspace/week1/work_ws/src/work1/srv/AddTwoInts.srv" NAME_WE)
 add_custom_target(_work1_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "work1" "/home/prowance/work_ws/src/work1/srv/AddTwoInts.srv" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "work1" "/home/prowance/Tutorial_2024/workspace/week1/work_ws/src/work1/srv/AddTwoInts.srv" ""
 )
 
 #
@@ -31,7 +31,7 @@ add_custom_target(_work1_generate_messages_check_deps_${_filename}
 
 ### Generating Services
 _generate_srv_cpp(work1
-  "/home/prowance/work_ws/src/work1/srv/AddTwoInts.srv"
+  "/home/prowance/Tutorial_2024/workspace/week1/work_ws/src/work1/srv/AddTwoInts.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/work1
@@ -49,7 +49,7 @@ add_custom_target(work1_generate_messages_cpp
 add_dependencies(work1_generate_messages work1_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/prowance/work_ws/src/work1/srv/AddTwoInts.srv" NAME_WE)
+get_filename_component(_filename "/home/prowance/Tutorial_2024/workspace/week1/work_ws/src/work1/srv/AddTwoInts.srv" NAME_WE)
 add_dependencies(work1_generate_messages_cpp _work1_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -64,7 +64,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS work1_generate_messages_cpp)
 
 ### Generating Services
 _generate_srv_eus(work1
-  "/home/prowance/work_ws/src/work1/srv/AddTwoInts.srv"
+  "/home/prowance/Tutorial_2024/workspace/week1/work_ws/src/work1/srv/AddTwoInts.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/work1
@@ -82,7 +82,7 @@ add_custom_target(work1_generate_messages_eus
 add_dependencies(work1_generate_messages work1_generate_messages_eus)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/prowance/work_ws/src/work1/srv/AddTwoInts.srv" NAME_WE)
+get_filename_component(_filename "/home/prowance/Tutorial_2024/workspace/week1/work_ws/src/work1/srv/AddTwoInts.srv" NAME_WE)
 add_dependencies(work1_generate_messages_eus _work1_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -97,7 +97,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS work1_generate_messages_eus)
 
 ### Generating Services
 _generate_srv_lisp(work1
-  "/home/prowance/work_ws/src/work1/srv/AddTwoInts.srv"
+  "/home/prowance/Tutorial_2024/workspace/week1/work_ws/src/work1/srv/AddTwoInts.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/work1
@@ -115,7 +115,7 @@ add_custom_target(work1_generate_messages_lisp
 add_dependencies(work1_generate_messages work1_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/prowance/work_ws/src/work1/srv/AddTwoInts.srv" NAME_WE)
+get_filename_component(_filename "/home/prowance/Tutorial_2024/workspace/week1/work_ws/src/work1/srv/AddTwoInts.srv" NAME_WE)
 add_dependencies(work1_generate_messages_lisp _work1_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -130,7 +130,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS work1_generate_messages_lisp)
 
 ### Generating Services
 _generate_srv_nodejs(work1
-  "/home/prowance/work_ws/src/work1/srv/AddTwoInts.srv"
+  "/home/prowance/Tutorial_2024/workspace/week1/work_ws/src/work1/srv/AddTwoInts.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/work1
@@ -148,7 +148,7 @@ add_custom_target(work1_generate_messages_nodejs
 add_dependencies(work1_generate_messages work1_generate_messages_nodejs)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/prowance/work_ws/src/work1/srv/AddTwoInts.srv" NAME_WE)
+get_filename_component(_filename "/home/prowance/Tutorial_2024/workspace/week1/work_ws/src/work1/srv/AddTwoInts.srv" NAME_WE)
 add_dependencies(work1_generate_messages_nodejs _work1_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -163,7 +163,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS work1_generate_messages_nodejs)
 
 ### Generating Services
 _generate_srv_py(work1
-  "/home/prowance/work_ws/src/work1/srv/AddTwoInts.srv"
+  "/home/prowance/Tutorial_2024/workspace/week1/work_ws/src/work1/srv/AddTwoInts.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/work1
@@ -181,7 +181,7 @@ add_custom_target(work1_generate_messages_py
 add_dependencies(work1_generate_messages work1_generate_messages_py)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/prowance/work_ws/src/work1/srv/AddTwoInts.srv" NAME_WE)
+get_filename_component(_filename "/home/prowance/Tutorial_2024/workspace/week1/work_ws/src/work1/srv/AddTwoInts.srv" NAME_WE)
 add_dependencies(work1_generate_messages_py _work1_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility

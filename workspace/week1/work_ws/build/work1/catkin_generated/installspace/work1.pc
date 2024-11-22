@@ -1,4 +1,4 @@
-prefix=/home/prowance/work_ws/install
+prefix=/home/prowance/Tutorial_2024/workspace/week1/work_ws/install
 
 Name: work1
 Description: Description of work1

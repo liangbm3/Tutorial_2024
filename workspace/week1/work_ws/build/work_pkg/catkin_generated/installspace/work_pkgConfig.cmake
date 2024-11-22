@@ -67,14 +67,14 @@ set(work_pkg_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(work_pkg_SOURCE_PREFIX /home/prowance/work_ws/src/work_pkg)
-  set(work_pkg_DEVEL_PREFIX /home/prowance/work_ws/devel)
+  set(work_pkg_SOURCE_PREFIX /home/prowance/Tutorial_2024/workspace/week1/work_ws/src/work_pkg)
+  set(work_pkg_DEVEL_PREFIX /home/prowance/Tutorial_2024/workspace/week1/work_ws/devel)
   set(work_pkg_INSTALL_PREFIX "")
   set(work_pkg_PREFIX ${work_pkg_DEVEL_PREFIX})
 else()
   set(work_pkg_SOURCE_PREFIX "")
   set(work_pkg_DEVEL_PREFIX "")
-  set(work_pkg_INSTALL_PREFIX /home/prowance/work_ws/install)
+  set(work_pkg_INSTALL_PREFIX /home/prowance/Tutorial_2024/workspace/week1/work_ws/install)
   set(work_pkg_PREFIX ${work_pkg_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/prowance/work_ws/install/lib;/home/prowance/work_ws/devel/lib;/home/prowance/666_ws/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/prowance/Tutorial_2024/workspace/week1/work_ws/install/lib;/home/prowance/work_ws/devel/lib;/home/prowance/666_ws/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
