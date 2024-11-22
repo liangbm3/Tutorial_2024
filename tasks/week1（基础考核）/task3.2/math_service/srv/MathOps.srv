@@ -1,0 +1,6 @@
+float64 a
+float64 b
+---
+float64 sum
+float64 product
+bool equal
