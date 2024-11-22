@@ -20,7 +20,9 @@ CMake是一种生成构建文件的工具，而Makefile是构建工具make使用
 ## 运行结果展示
 编译过程：
 ![image](https://github.com/user-attachments/assets/0035aa0d-0023-456b-be50-b17f405064fe)
-
+运行文件：
+![image](https://github.com/user-attachments/assets/ec904590-70c7-4fee-8348-522dfa46a2e8)
+~~（编译的时候太急了，源代码没有加“输入：”“输出：”这样的文字提示，希望这些细节无伤大雅）~~
 
 # 第二题 shell
 ## 解答思路和流程
