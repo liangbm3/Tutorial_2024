@@ -1,0 +1,8 @@
+uint8 num1
+uint8 num2
+
+---
+uint8 sum
+uint8 product
+uint8 isequal
+string result
