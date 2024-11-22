@@ -14,3 +14,53 @@
 如果你在后续的方法中有用到诸如深度学习等需要大批量 数据的内容，你可以将数据内容上传至百度网盘并在报告中给出分享链接即可。
 
 该空间完全自由，期待你的发挥 QAQ!
+
+#### week 1
+-[x]task 1 斐波那契数列
+-[x]task 2 LinuxShell
+-[]task 3 ROS通信机制
+
+##### task1
+代码示例：
+```cpp
+#include <iostream>
+using namespace std;
+
+// 函数计算斐波那契数列的第 n 项
+int fibonacci(int n) {
+    if (n == 0) return 0; // 处理 F(0)
+    if (n == 1) return 1; // 处理 F(1)
+    
+    // 定义变量保存前两项
+    int prev1 = 0, prev2 = 1;
+    int current;
+    
+    // 自底向上计算斐波那契数列
+    for (int i = 2; i <= n; ++i) {
+        current = prev1 + prev2; // 当前项
+        prev1 = prev2;           // 更新前一项
+        prev2 = current;         // 更新当前项
+    }
+    
+    return current;
+}
+
+int main() {
+    int n;
+    cout << "输入 n (0 <= n <= 50): ";
+    cin >> n;
+
+    if (n < 0 || n > 50) {
+        cout << "输入的 n 超出范围。" << endl;
+        return 1;
+    }
+
+    // 调用函数并输出结果
+    cout << "斐波那契数列的第 " << n << " 项是: " << fibonacci(n) << endl;
+
+    return 0;
+}
+
+linux终端界面和cmake、makefile的编译示例：
+
+![linux图形界面示例]（）
