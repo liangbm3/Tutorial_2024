@@ -165,7 +165,12 @@ case $1 in
     ;;
 esac
 ```
-![编译图书管理代码示例](https://github.com/nulidedoupier/Tutorial_2024/blob/main/workspace/image/1.png)
-![编译图书管理终端界面及测试示例]()
+![编译图书管理代码示例](https://github.com/nulidedoupier/Tutorial_2024/blob/main/workspace/image/2.1.png)
+![编译图书管理终端界面及测试示例](https://github.com/nulidedoupier/Tutorial_2024/blob/main/workspace/image/2.png)
+
+##### task3
+由于无法连接到github上传输软件源，下载多次失败，进度截止到ros的更新安装，这是目前的一些进度照片
+
+![进度]()
 
 
