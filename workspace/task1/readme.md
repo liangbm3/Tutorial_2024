@@ -16,6 +16,12 @@
 CMake是一种生成构建文件的工具，而Makefile是构建工具make使用的文件，CMake通常用于生成Makefile。
 
 ### 编译的流程
+首先创建一个包含源代码和 CMakeLists.txt 文件的目录project。
+
+CMakeLists.txt 文件指定项目的编译规则。
+
+然后，在项目根目录外创建一个 build/ 目录，用于存放编译文件。运行 CMake 配置项目并生成构建系统。
+然后使用 make 编译项目。最终生成的可执行文件位于 build/ 目录中。
 
 ## 运行结果展示
 编译过程：
