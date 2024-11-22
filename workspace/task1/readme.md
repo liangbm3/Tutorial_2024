@@ -11,8 +11,16 @@
 通过a+b计算出当前项，并将 a 和 b 更新为新的前两项。
 最终，返回b，b保存的是第n项的值。
 ~~（虽然名字高大上，可是看起来也很简单没什么难的啊）~~
+
 ### cmake和makefile的关系
 CMake是一种生成构建文件的工具，而Makefile是构建工具make使用的文件，CMake通常用于生成Makefile。
+
+### 编译的流程
+
+## 运行结果展示
+编译过程：
+![image](https://github.com/user-attachments/assets/0035aa0d-0023-456b-be50-b17f405064fe)
+
 
 # 第二题 shell
 ## 解答思路和流程
@@ -36,7 +44,8 @@ CMake是一种生成构建文件的工具，而Makefile是构建工具make使用
 ## 1.ROS的安装
 已完成(* ^▽^ *)
 ![image](https://github.com/user-attachments/assets/798d4859-0a1f-4438-94ab-23a5d99dd04a)
-## 
+
+## 剩下的：马上填坑！！！
 
 # 第四题 markdown文档
 如上所示~_(:з」∠)_
