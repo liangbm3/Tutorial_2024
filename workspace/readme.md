@@ -67,3 +67,105 @@ int main() {
 linux终端界面和cmake、makefile的编译示例：
 
 ![linux图形界面示例](https://github.com/nulidedoupier/Tutorial_2024/blob/main/workspace/image/1.png)
+![linux编译程序示例1]
+![linux编译程序示例2]
+![linux编译程序示例3]
+
+##### task2
+代码示例：
+```sh
+#!/bin/bash
+
+# 文件名
+FILE="books.txt"
+
+# 用法提示
+usage() {
+  echo "Usage:"
+  echo "  book.sh                  列出所有书籍的记录"
+  echo "  book.sh -a 书号:书名:作者:类别  添加新书籍记录"
+  echo "  book.sh -d 书号             删除指定书号的记录"
+  echo "  book.sh -s 书号             查找并显示指定书号的记录"
+}
+
+# 检查文件是否存在，如果不存在则创建
+if [ ! -f "$FILE" ]; then
+  touch "$FILE"
+fi
+
+# 列出所有书籍记录
+if [ $# -eq 0 ]; then
+  cat "$FILE"
+  exit 0
+fi
+
+# 处理不同的选项
+case $1 in
+  -a)
+    # 添加书籍记录
+    if [ $# -eq 2 ]; then
+      IFS=":" read -r book_id book_name book_author book_category <<< "$2"
+      if grep -q "^$book_id:" "$FILE"; then
+        echo "书号 $book_id 已存在，信息如下："
+        grep "^$book_id:" "$FILE"
+      else
+        echo "$2" >> "$FILE"
+        echo "书籍记录已添加：$2"
+      fi
+    else
+      echo "错误：参数不足，请提供书籍信息。"
+      usage
+    fi
+    ;;
+
+  -d)
+    # 删除书籍记录
+    if [ $# -eq 2 ]; then
+      book_id="$2"
+      if grep -q "^$book_id:" "$FILE"; then
+        echo "找到书号 $book_id 的记录："
+        grep "^$book_id:" "$FILE"
+        echo -n "确认删除记录？(y/n): "
+        read -r confirm
+        if [[ "$confirm" == "y" || "$confirm" == "yes" ]]; then
+          sed -i "/^$book_id:/d" "$FILE"
+          echo "书号 $book_id 的记录已删除。"
+        else
+          echo "操作已取消。"
+        fi
+      else
+        echo "错误：书号 $book_id 不存在。"
+      fi
+    else
+      echo "错误：参数不足，请提供书号。"
+      usage
+    fi
+    ;;
+
+  -s)
+    # 查找书籍记录
+    if [ $# -eq 2 ]; then
+      book_id="$2"
+      if grep -q "^$book_id:" "$FILE"; then
+        echo "找到书号 $book_id 的记录："
+        grep "^$book_id:" "$FILE"
+      else
+        echo "错误：书号 $book_id 不存在。"
+      fi
+    else
+      echo "错误：参数不足，请提供书号。"
+      usage
+    fi
+    ;;
+
+  *)
+    # 其他错误输入
+    echo "错误：无效的选项 $1"
+    usage
+    ;;
+esac
+```
+![编译图书管理代码示例](https://github.com/nulidedoupier/Tutorial_2024/blob/main/workspace/image/1.png)
+![编译图书管理终端界面及测试示例]()
+
+
