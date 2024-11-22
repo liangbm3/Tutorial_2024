@@ -16,9 +16,11 @@
 该空间完全自由，期待你的发挥 QAQ!
 
 #### week 1
--[x]task 1 斐波那契数列
--[x]task 2 LinuxShell
--[]task 3 ROS通信机制
+|task|complete|
+|:---|:--:|
+|1|yes|
+|2|yes|
+|3|not|
 
 ##### task1
 代码示例：
@@ -64,4 +66,4 @@ int main() {
 
 linux终端界面和cmake、makefile的编译示例：
 
-![linux图形界面示例]（https://github.com/nulidedoupier/Tutorial_2024/blob/main/workspace/image/1.png）
+![linux图形界面示例](https://github.com/nulidedoupier/Tutorial_2024/blob/main/workspace/image/1.png)
