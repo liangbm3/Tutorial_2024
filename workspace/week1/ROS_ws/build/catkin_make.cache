@@ -1,2 +1,2 @@
-package_pub_sub:packge_ser_cli
+package_pub_sub:service_pkg
 -DCATKIN_DEVEL_PREFIX=/home/kanning/projects/Tutorial/workspace/week1/ROS_ws/devel -DCMAKE_INSTALL_PREFIX=/home/kanning/projects/Tutorial/workspace/week1/ROS_ws/install -G Unix Makefiles

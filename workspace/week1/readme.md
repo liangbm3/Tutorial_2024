@@ -1,5 +1,5 @@
 # **week1**
-btw,,好像截图也上传失败了555
+
 ## **1. 斐波那契数列**
 
 ### **1.1 代码**
@@ -31,7 +31,7 @@ int main(){
 ```
 
 ### **1.2 vscode编译截图**
-![[Screenshot from 2024-11-19 23-34-03.png]]
+![[Fibonacci.png]]
 
 ### **1.3 `cmake` 和 `makefile` 编译此c++程序**
 #### **1.3.1 `CMakeList.txt`**
@@ -142,25 +142,28 @@ else
 fi
 ```
 #### 2.2.1 列出所有书籍记录：输入`book.sh`
-![[Screenshot from 2024-11-21 22-41-20.png]]
+![[book.sh2.2.1.png]]
 #### 2.2.2 添加书：输入`book.sh -a 2006:人工智能导论:刘八:计算机科学`
-![[Screenshot from 2024-11-21 22-43-32.png]]
+![[book.sh2.2.2.png]]
 #### 2.2.3 删除书：输入`book.sh -d 2001`
-- 输入 y
-![[book.sh2.2.3.1.png]]
 - 输入 n
-![[book.sh2.2.3.2.png]]
+- 输入 y
+![[book.sh2.2.3.png]]
 #### 2.2.4 查找书：输入`book.sh -s 2001`
 ![[book.sh2.2.4.png]]
 #### 2.2.5 不按规定输入时
 ![[book.sh2.2.5.png]]
 
 ## **3. ROS通信机制**
+### **3.1 ROS成功安装**
+![[roscore.png]]
 ### **3.1 `Publisher`和`Subscriber`**
+先在`ROS_ws`中创建一个包`package_pub_sub`
 #### 3.1.1执行截图
-  ![[package_pub_sub.png]]
+  ![[rosrun_package_pub_sub.png]]
 
 #### 3.1.2 代码思路
+
 - 创建`randomdata.msg`
 ```
 int32 id
@@ -283,12 +286,41 @@ int main(int argc, char**argv){
 }
 ```
 
+#### 3.2.3 在CMakelists.txt 和 package.xml 中添加
+- `CMakelists.txt`
+```
+find_package(catkin REQUIRED COMPONENTS
+  roscpp
+  std_msgs
+  message_generation
+)
 
-### **3.2 `server`和`client`**
-#### 3.2.1 执行截图
-在创建好package还有编写好了src文件夹里面的所有.cpp代码，并且在package.xml添加了依赖包和CMakeLists.txt添加了编译选项后，执行`catkin_make`命令时出现以下错误，在网上查了好多资料捣鼓了好久还是没有解决555Q...Q
-![[package_ser_cli.png]]
-#### 3.2.2 代码思路
+add_message_files( FILES randomdata.msg )
+
+generate_messages( 
+	DEPENDENCIES std_msgs ) 
+
+catkin_package( 
+	CATKIN_DEPENDS roscpp std_msgs message_runtime )
+
+add_executable(Publisher msg/Publisher.cpp) target_link_libraries(Publisher ${catkin_LIBRARIES}) 
+
+add_executable(Subscriber msg/Subscriber.cpp) target_link_libraries(Subscriber ${catkin_LIBRARIES}) 
+```
+- `package.xml`
+```
+<build_depend>message_generation</build_depend>
+<exec_depend>message_runtime</exec_depend>
+```
+
+
+### **3.3 `server`和`client`**
+- 之前提交的那次一直编译不成功应该是我在创建包的时候没有执行一次`catkin_make`，其他步骤都和之前一致，然后就catkin_make成功了，好神~奇~
+#### 3.3.1 运行截图
+
+![[rosrun_service_pkg.png]]
+#### 3.3.2 代码思路
+先在`ROS_ws`中创建一个包`service_pkg`
 - `TwoNumbers.srv`
 ```
 int32 a
@@ -303,15 +335,17 @@ bool is_equal
 ```
 #include <ros/ros.h>
 
-#include <package_ser_cli/TwoNumbers.h>
+#include <service_pkg/TwoNumbers.h>
 
   
 
-bool handle_request(package_ser_cli::TwoNumbers::Request &req,
+bool handle_request(service_pkg::TwoNumbers::Request &req,
 
-                    package_ser_cli::TwoNumbers::Response &res)
+                    service_pkg::TwoNumbers::Response &res)
 
 {
+
+    //定义三种运算
 
     res.sum = req.a + req.b;
 
@@ -319,9 +353,13 @@ bool handle_request(package_ser_cli::TwoNumbers::Request &req,
 
     res.is_equal = (req.a == req.b);
 
+    //打印三种运算结果
+
     ROS_INFO("Received: a=%d, b=%d | Sum=%d, Product=%d, Equal=%s",
 
              req.a, req.b, res.sum, res.product, res.is_equal ? "True" : "False");
+
+    //如果成功调用，则返回true
 
     return true;
 
@@ -333,15 +371,25 @@ int main(int argc, char **argv)
 
 {
 
+    //初始化ROS节点
+
     ros::init(argc, argv, "number_service");
+
+    //创建节点句柄
 
     ros::NodeHandle nh;
 
   
 
+    //创建一个服务，名为"two_numbers"，回调函数为handle_request
+
     ros::ServiceServer server = nh.advertiseService("two_numbers", handle_request);
 
+    //打印日志：表示服务已启动
+
     ROS_INFO("Service ready.");
+
+    //循环等待
 
     ros::spin();
 
@@ -353,7 +401,7 @@ int main(int argc, char **argv)
 ```
 #include <ros/ros.h>
 
-#include <package_ser_cli/TwoNumbers.h>
+#include <service_pkg/TwoNumbers.h>
 
   
 
@@ -361,21 +409,31 @@ int main(int argc, char **argv)
 
 {
 
+    //初始化客户端节点
+
     ros::init(argc, argv, "number_client");
+
+    //创建节点句柄
 
     ros::NodeHandle nh;
 
   
 
-    ros::ServiceClient client = nh.serviceClient<package_ser_cli::TwoNumbers>("two_numbers");
+    //创建一个服务客户端，连接名为“two_numbers”的服务，客户端与服务器之间的交互类型为“service_pkg::TwoNumbers”
 
-    package_ser_cli::TwoNumbers srv;
+    ros::ServiceClient client = nh.serviceClient<service_pkg::TwoNumbers>("two_numbers");
+
+    //声明服务请求消息
+
+    service_pkg::TwoNumbers srv;
 
     srv.request.a = 5;
 
     srv.request.b = 10;
 
   
+
+    //调用服务，等待服务端返回结果
 
     if (client.call(srv))
 
@@ -391,6 +449,8 @@ int main(int argc, char **argv)
 
     {
 
+        //调用失败打印错误
+
         ROS_ERROR("Failed to call service.");
 
     }
@@ -399,5 +459,33 @@ int main(int argc, char **argv)
 
 }
 ```
-### **3.3 ros install**
-![[Screenshot from 2024-11-22 23-57-19.png]]
+
+#### 3.3.3 CMakelists.txt 和 package.xml 的添加
+- `CMakelists.txt`
+```
+find_package(catkin REQUIRED COMPONENTS
+  roscpp
+  std_msgs
+  message_generation
+)
+
+add_service_files( FILES TwoNumbers.srv )
+
+generate_messages( 
+	DEPENDENCIES std_msgs ) 
+
+catkin_package( 
+	CATKIN_DEPENDS roscpp std_msgs message_runtime )
+
+add_executable(service_server src/service_server.cpp) target_link_libraries(service_server ${catkin_LIBRARIES}) add_dependencies(service_server ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS}) 
+
+add_executable(service_client src/service_client.cpp) target_link_libraries(service_client ${catkin_LIBRARIES}) add_dependencies(service_client ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
+```
+
+- `package.xml`
+```
+<build_depend>message_generation</build_depend>
+<exec_depend>message_runtime</exec_depend>
+
+```
