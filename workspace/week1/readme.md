@@ -149,6 +149,7 @@ fi
 #### 2.2.3 删除书：输入`book.sh -d 2001`
 - 输入 n
 - 输入 y
+
 ![book.sh2.2.3](image/book.sh2.2.3.png)
 #### 2.2.4 查找书：输入`book.sh -s 2001`
 ![book.sh2.2.4](image/book.sh2.2.4.png)
