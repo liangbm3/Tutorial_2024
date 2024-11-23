@@ -1,7 +1,7 @@
 # **week1**
 
 ## **1. 斐波那契数列**
-
+- 请打开`Fibonacci`文件夹查看
 ### **1.1 代码**
 
 ```
@@ -31,7 +31,8 @@ int main(){
 ```
 
 ### **1.2 vscode编译截图**
-![[Fibonacci.png]]
+![Fibonacci](image/Fibonacci.png)
+
 
 ### **1.3 `cmake` 和 `makefile` 编译此c++程序**
 #### **1.3.1 `CMakeList.txt`**
@@ -65,9 +66,9 @@ clean:
 ```
 
 ## **2. Linux Shell**
-
+- 请打开`Linus Shell`文件夹查看
 ### **2.1 创建`books.txt`**
-![[books.txt.png]]
+![books.txt](image/books.txt.png)
 ### **2.2 创建`book.sh`脚本**
 ```
 #!/bin/bash
@@ -142,25 +143,26 @@ else
 fi
 ```
 #### 2.2.1 列出所有书籍记录：输入`book.sh`
-![[book.sh2.2.1.png]]
+![book.sh2.2.1](image/book.sh2.2.1.png)
 #### 2.2.2 添加书：输入`book.sh -a 2006:人工智能导论:刘八:计算机科学`
-![[book.sh2.2.2.png]]
+![book.sh2.2.2](image/book.sh2.2.2.png)
 #### 2.2.3 删除书：输入`book.sh -d 2001`
 - 输入 n
 - 输入 y
 ![[book.sh2.2.3.png]]
 #### 2.2.4 查找书：输入`book.sh -s 2001`
-![[book.sh2.2.4.png]]
+![book.sh2.2.4](image/book.sh2.2.4.png)
 #### 2.2.5 不按规定输入时
-![[book.sh2.2.5.png]]
+![book.sh2.2.5](image/book.sh2.2.5.png)
 
 ## **3. ROS通信机制**
+- 请打开`ROS_ws`文件夹查看
 ### **3.1 ROS成功安装**
-![[roscore.png]]
+![roscore](image/roscore.png)
 ### **3.1 `Publisher`和`Subscriber`**
 先在`ROS_ws`中创建一个包`package_pub_sub`
 #### 3.1.1执行截图
-  ![[rosrun_package_pub_sub.png]]
+  ![rosrun_package_pub_sub](image/rosrun_package_pub_sub.png)
 
 #### 3.1.2 代码思路
 
@@ -318,7 +320,7 @@ add_executable(Subscriber msg/Subscriber.cpp) target_link_libraries(Subscriber $
 - 之前提交的那次一直编译不成功应该是我在创建包的时候没有执行一次`catkin_make`，其他步骤都和之前一致，然后就catkin_make成功了，好神~奇~
 #### 3.3.1 运行截图
 
-![[rosrun_service_pkg.png]]
+![rosrun_service_pkg](image/rosrun_service_pkg.png)
 #### 3.3.2 代码思路
 先在`ROS_ws`中创建一个包`service_pkg`
 - `TwoNumbers.srv`
