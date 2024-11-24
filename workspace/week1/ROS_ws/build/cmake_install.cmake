@@ -132,7 +132,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/kanning/projects/Tutorial/workspace/week1/ROS_ws/build/gtest/cmake_install.cmake")
   include("/home/kanning/projects/Tutorial/workspace/week1/ROS_ws/build/package_pub_sub/cmake_install.cmake")
-  include("/home/kanning/projects/Tutorial/workspace/week1/ROS_ws/build/packge_ser_cli/cmake_install.cmake")
+  include("/home/kanning/projects/Tutorial/workspace/week1/ROS_ws/build/service_pkg/cmake_install.cmake")
 
 endif()
 

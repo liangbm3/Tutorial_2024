@@ -503,6 +503,12 @@ rosgraph_msgs_DIR:PATH=/opt/ros/noetic/share/rosgraph_msgs/cmake
 //The directory containing a CMake configuration file for rostime.
 rostime_DIR:PATH=/opt/ros/noetic/share/rostime/cmake
 
+//Value Computed by CMake
+service_pkg_BINARY_DIR:STATIC=/home/kanning/projects/Tutorial/workspace/week1/ROS_ws/build/service_pkg
+
+//Value Computed by CMake
+service_pkg_SOURCE_DIR:STATIC=/home/kanning/projects/Tutorial/workspace/week1/ROS_ws/src/service_pkg
+
 //The directory containing a CMake configuration file for std_msgs.
 std_msgs_DIR:PATH=/opt/ros/noetic/share/std_msgs/cmake
 
