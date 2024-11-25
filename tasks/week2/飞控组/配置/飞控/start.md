@@ -7,12 +7,20 @@ Revise: @liangbm3
 
 前置环境和知识：能够正常运行的ubuntu环境，熟悉linux基本操作。推荐搭建PX4的vscode环境，[vscode环境配置看这里](https://docs.px4.io/main/zh/dev_setup/vscode.html) (考核中如果没有时间可以暂时用gedit凑合一下)
 
-温馨提示：基于ubuntu 20.04+rosnoetic
+温馨提示：
+-  基于ubuntu 20.04+rosnoetic
+- 使用 VMware 的话注意内存要留够 50G 空间
+- 使用 WSL 的话配置步骤和下面的步骤是一模一样的，只是最后运行 QGround 地面站的时候没有鼠标可以点击的图标
+   - 不过可以使用命令行运行，比如 `~/QGroundControl.AppImage` 
+   - 这里的 `.AppImage` 在 linux 中类似于 windows 系统的 exe 可执行文件，放置的路径是要看自己的安装路径和其他信息做出修改
+   - 前面使用 WSL 的同学其实还有一个福利，就是 WSL 可以直接使用 windows 主机上的显卡驱动，使用真实的显卡硬件进行加速渲染和推理
 
-* 下面出现的命令行有些不要直接复制粘贴，是要看自己的安装路径和其他信息做出修改。
+
+* **下面出现的命令行有些不要直接复制粘贴，是要看自己的安装路径和其他信息做出修改**。
 * 遇到报错时，要查看清楚报错信息，尽量在网上查找报错原因和如何修正，从中学习关于ros和px4的一些知识
 * px4的环境配置可能有点麻烦和困难，放平心态耐心坚持~~
 * PX4官网：https://docs.px4.io/main/en/
+
 
 
 
