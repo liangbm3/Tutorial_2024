@@ -1,7 +1,7 @@
 # 欢迎来到飞控指南！
 
-Author：@squarepantsbobsponge @cakerdsp  
-Revise: @liangbm3
+Author：@[squarepantsbobsponge](https://github.com/squarepantsbobsponge) @[cakerdsp](https://github.com/cakerdsp)  
+Revise: @[liangbm3](https://github.com/liangbm3) @[skyswordx](https://github.com/skyswordx)
 
 在这里，你会了解到基本的有关PX4的相关知识。
 
@@ -14,6 +14,8 @@ Revise: @liangbm3
    - 不过可以使用命令行运行，比如 `~/QGroundControl.AppImage` 
    - 这里的 `.AppImage` 在 linux 中类似于 windows 系统的 exe 可执行文件，放置的路径是要看自己的安装路径和其他信息做出修改
    - 前面使用 WSL 的同学其实还有一个福利，就是 WSL 可以直接使用 windows 主机上的显卡驱动，使用真实的显卡硬件进行加速渲染和推理
+- 可以在运行 `make` 相关的编译命令前，查看一下自己 CPU 的核心数量，使用多核心编译的选项可以加快编译的速度，节约配置环境的时间
+   - 比如可以使用 `make -j8` 使用 8 个核心编译
 
 
 * **下面出现的命令行有些不要直接复制粘贴，是要看自己的安装路径和其他信息做出修改**。
