@@ -19,7 +19,10 @@ Revise:  @[skyswordx](https://github.com/skyswordx)
     ![alt text](./image/val_batch0_labels.jpg)
     ![alt text](./image/val_batch1_labels.jpg)
     ![alt text](./image/val_batch2_labels.jpg)
-    请你尝试：
+
+    P.S: 看到这里不觉得 bm 学长很帅嘛 ~
+
+    然后请你尝试：
     1. 自己拍摄一些类似的手势，然后使用`detect.py`进行预测，给出预测结果。
     2. 使用电脑摄像头/外置摄像头实时进行预测，给出截图
     **由于该权重是使用我们自己录制的数据集进行训练，且只由一个人录制，数据量较小，可能不具有鲁棒性，所以可能会出现准确度较低的情况**
