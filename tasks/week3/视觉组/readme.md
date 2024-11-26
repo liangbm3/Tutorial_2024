@@ -1,7 +1,8 @@
 # 视觉组第三周考核任务
 
-Author：@liangbm3  
-Revise: @
+Author：@[liangbm3](https://github.com/liangbm3)
+
+Revise:  @[skyswordx](https://github.com/skyswordx)
 
 ## 学习目标
 

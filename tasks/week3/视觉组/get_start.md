@@ -66,14 +66,35 @@ pip install -r requirements.txt  # install dependencies
 
 **其他概念自行阅读其他资料。深度学习是一门很深的学问，这个项目只是让大家对其有一个初步的体会，无需深究。**
 
-## 标注工具LabelImg安装和使用
+## 标注工具的使用
 
-### 安装
+### 标注的作用
+
+深度学习的数据集是需要我们事先准备好的，人工智能有多少智能，就要有多少人工
+
+准备数据集的过程大概就是标注
+
+然后在标注完的数据集通常需要进行脚本处理，以便将数据集分类为训练集、验证集和测试集
+这个过程包括以下步骤：
+
+1. **突然有需求要批量处理数据集**：比如在标注完图片之后，突然发现要把图片进行随机的光照处理、加上随机的高斯噪声之类的，不可能人工再重新标注一次，这时候得要借助脚本和标注文件的格式进行一些奇技淫巧来达到废物利用的效果
+    - 比如标注时标签是中文，可是要用英文该咋办![alt text](2f51c57ddaa219a87c3eaf3e33a078c.png)
+    - 可以对标注工具导出前的标注文件的数据格式进行处理，处理完再导出，这里是用 x-anlylabeling，在导出给 yolo 用前的数据文件是以 json 格式存储的，使用 py 脚本批处理即可![alt text](车队软件组-20241026235818203.png)
+
+
+2. **数据集分割成上述三个集**：将数据集分割为训练集、验证集和测试集，通常按照一定的比例进行分割（例如 70% 训练集，20% 验证集，10% 测试集）这也需要在导出所有标注文件之后使用脚本分类处理
+    - 比如下面的场景，把图片和标注信息文件分类![alt text](车队软件组-20241027000051045.png)
+    - 还有把数据集按比例分类成上述三个部分![alt text](196f755536aa40d5f693a705d2f2139.png)
+
+
+### 使用经典标注工具 labelimg
+
+#### 安装
 使用以下命令进行安装：
 ```bash
 pip install labelimg -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
-### 使用
+#### 使用
 
 在命令行输入以下命令
 ```bash
@@ -85,6 +106,26 @@ labelImg
 把标注格式改为yolo即可
 
 更加具体的使用可以参考<https://blog.csdn.net/StopAndGoyyy/article/details/139906637>
+
+### 使用 x-anylabeling
+
+上面的标注工具是经典的手动标注工具，这里有一种新的思路，就是先使用手动标注的数据集做个小模型，然后写个脚本用小数据集的模型来代替你去识别图片
+- 如果能认出来的话就用识别结果导出成标注的文件
+- 认不出来的自动另存，再手动标注一下然后重新训练（太多认不出来的，可以取部分来标注），训练出来的模型再跑新的图片，重复做几次就完善了
+- 这样就可以大大减少人工标注的工作量
+
+这里的 x-anylabeling 就实现了上述的一部分功能，可以导入训练好的模型进行自动标注
+当然，这个标注工具也像 labelimg 一样支持手动标注
+
+
+下是这个项目的 github地址
+- [X-AnyLabeling/docs/zh_cn/get_started.md at main · CVHub520/X-AnyLabeling](https://github.com/CVHub520/X-AnyLabeling/blob/main/docs/zh_cn/get_started.md)
+- [X-AnyLabeling/docs/zh_cn/user_guide.md at main · CVHub520/X-AnyLabeling](https://github.com/CVHub520/X-AnyLabeling/blob/main/docs/zh_cn/user_guide.md)
+- 注意，直接安装二进制文件印象中好像只支持默认的人工标注功能，要想有导入模型进行自动化标注，需要克隆源码进行编译
+- 编译时也有 GPU 加速的版本和只使用 CPU 的版本，按需下载安装二进制文件或者编译即可
+
+视频教程
+- [【YOLO】X-AnyLabeling自动标注工具,AI帮你解放双手_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV12c46eUE4o/?spm_id_from=333.337.search-card.all.click&vd_source=9c85d181a345808c304a6fa2780bb4da)
 
 ## 数据集的训练
 
