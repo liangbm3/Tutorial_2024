@@ -10,7 +10,7 @@ Revise:  @[skyswordx](https://github.com/skyswordx)
 + 学习制作自己的数据集
 + 学习如何使用手势控制小车/无人机移动
 
-具体内容参加[学习指导](./get_start.md)  
+具体内容参加[学习指导](./get_started.md)  
 附件文件在`source`文件夹下。
 ## 本周任务
 
