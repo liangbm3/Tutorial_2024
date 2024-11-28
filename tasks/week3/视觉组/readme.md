@@ -6,8 +6,9 @@ Revise:  @[skyswordx](https://github.com/skyswordx)
 
 ## 学习目标
 
-+ 学习如何神经网络模型的训练过程
++ 学习神经网络模型的训练过程
 + 学习制作自己的数据集
++ 了解launch和urdf模型
 + 学习如何使用手势控制小车
 
 具体内容参加[学习指导](./get_started.md)  
