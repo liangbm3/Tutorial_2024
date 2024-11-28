@@ -15,13 +15,12 @@ void pos_cb(const geometry_msgs::PoseStamped::ConstPtr& msg){
     current_pos = *msg;
 }
 
-// 设置四个目标点的坐标，假设飞行器以(0, 0)为起点
 geometry_msgs::PoseStamped create_target(double x, double y, double z) {
     geometry_msgs::PoseStamped target;
     target.pose.position.x = x;
     target.pose.position.y = y;
     target.pose.position.z = z;
-    target.pose.orientation.w = 1.0;  // 默认无旋转（保持水平）
+    target.pose.orientation.w = 1.0;  
     return target;
 }
 
@@ -44,7 +43,7 @@ int main(int argc, char **argv) {
     ros::ServiceClient arming_client = nh.serviceClient<mavros_msgs::CommandBool>("/mavros/cmd/arming");
     ros::ServiceClient set_mode_client = nh.serviceClient<mavros_msgs::SetMode>("/mavros/set_mode");
 
-    ros::Rate rate(20.0);  // 发布频率 20 Hz
+    ros::Rate rate(20.0); 
 
     // 创建目标点
     geometry_msgs::PoseStamped target1 = create_target(0, 0, 2);   // 起点
