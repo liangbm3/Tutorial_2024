@@ -1,18 +1,28 @@
 # 欢迎来到飞控指南！
 
-Author：@squarepantsbobsponge @cakerdsp  
-Revise: @liangbm3
+Author：@[squarepantsbobsponge](https://github.com/squarepantsbobsponge) @[cakerdsp](https://github.com/cakerdsp)  
+Revise: @[liangbm3](https://github.com/liangbm3) @[skyswordx](https://github.com/skyswordx)
 
 在这里，你会了解到基本的有关PX4的相关知识。
 
 前置环境和知识：能够正常运行的ubuntu环境，熟悉linux基本操作。推荐搭建PX4的vscode环境，[vscode环境配置看这里](https://docs.px4.io/main/zh/dev_setup/vscode.html) (考核中如果没有时间可以暂时用gedit凑合一下)
 
-温馨提示：基于ubuntu 20.04+rosnoetic
+温馨提示：
+-  基于ubuntu 20.04+rosnoetic
+- 使用 VMware 的话注意内存要留够 50G 空间
+- 使用 WSL 的话配置步骤和下面的步骤是一模一样的，只是最后运行 QGround 地面站的时候没有鼠标可以点击的图标
+   - 不过可以使用命令行运行，比如 `~/QGroundControl.AppImage` 
+   - 这里的 `.AppImage` 在 linux 中类似于 windows 系统的 exe 可执行文件，放置的路径是要看自己的安装路径和其他信息做出修改
+   - 前面使用 WSL 的同学其实还有一个福利，就是 WSL 可以直接使用 windows 主机上的显卡驱动，使用真实的显卡硬件进行加速渲染和推理
+- 可以在运行 `make` 相关的编译命令前，查看一下自己 CPU 的核心数量，使用多核心编译的选项可以加快编译的速度，节约配置环境的时间
+   - 比如可以使用 `make -j8` 使用 8 个核心编译
 
-* 下面出现的命令行有些不要直接复制粘贴，是要看自己的安装路径和其他信息做出修改。
+
+* **下面出现的命令行有些不要直接复制粘贴，是要看自己的安装路径和其他信息做出修改**。
 * 遇到报错时，要查看清楚报错信息，尽量在网上查找报错原因和如何修正，从中学习关于ros和px4的一些知识
 * px4的环境配置可能有点麻烦和困难，放平心态耐心坚持~~
 * PX4官网：https://docs.px4.io/main/en/
+
 
 
 
@@ -129,8 +139,8 @@ sudo ./install_geographiclib_datasets.sh
 需要在 .bashrc 中添加px4源码
 
 ```
-gedit .bashrc
-//打开 .bashrc
+gedit ~/.bashrc
+//打开 ~/.bashrc
 ```
 
 添加如下：(这个有点玄学，如果后续有相关报错，需要自行搜索，下面的路径要替换成自己PX4源码的路径)
@@ -146,14 +156,14 @@ export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:~/PX4-Autopilot/Tools/sitl_gazebo
 添加完保存后需要在命令行：
 
 ```
- source .bashrc
+ source ~/.bashrc
 ```
 
 ## 四、仿真初尝
 
 ### 1. 仿真软件和地面站介绍：
 
-* 仿真软件一般可以用 `<code>`gazebo `</code>`，`<code>`gazebo-classic `</code>`，这个在ros中是自带的，可以在终端输入gazebo或者gazebo-classic看是否存在
+* 仿真软件一般可以用 <code>gazebo </code>，<code>gazebo-classic </code>，这个在ros中是自带的，可以在终端输入gazebo或者gazebo-classic看是否存在
 * QGC地面站，即QGroundControl，是一款开源的无人机地面站软件，专为无人机操作员设计。以下是对QGC地面站的详细介绍：
 
   1. **无人机控制**：QGC地面站提供了对无人机的全面控制功能，包括起飞、降落、悬停、飞行轨迹调整等。
@@ -238,7 +248,7 @@ QGC的安装教程很多，大家可以自行搜索，注意要安装在你的�
 
   1. [参考连接](https://discuss.px4.io/t/drone-spawn-position-setup/31970/9)
 
-      找到 /your_px4_path/PX4-Autopilot/Tools/simulation/gazebo-classic/sitl_gazebo-classic/worlds。 这个文件夹存放着仿真用到的所有场景（world），当你不去指定时，默认运行empty.world，如果指定了仿真环境，则打开对应场景的文件。
+      找到 `/your_px4_path/PX4-Autopilot/Tools/simulation/gazebo-classic/sitl_gazebo-classic/worlds`。 这个文件夹存放着仿真用到的所有场景（world），当你不去指定时，默认运行empty.world，如果指定了仿真环境，则打开对应场景的文件。
          打开后，找到以下几行，如果没有，则添加：
 
       ```
