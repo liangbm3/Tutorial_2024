@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d6d1e182-428d-4ec8-816a-b41a38a8d8c0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.dockerignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CITATION.cff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CONTRIBUTING.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.zh-CN.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/benchmarks.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classify/predict.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classify/train.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classify/tutorial.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classify/val.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/hyps/hyp.Objects365.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/hyps/hyp.VOC.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/hyps/hyp.no-augmentation.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/hyps/hyp.scratch-high.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/hyps/hyp.scratch-low.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/hyps/hyp.scratch-med.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/scripts/download_weights.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/scripts/get_coco.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/scripts/get_coco128.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/scripts/get_imagenet.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/scripts/get_imagenet10.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/scripts/get_imagenet100.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/scripts/get_imagenet1000.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detect.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/export.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hubconf.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/d.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/common.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/experimental.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/hub/anchors.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/hub/yolov3-spp.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/hub/yolov3-tiny.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/hub/yolov3.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/hub/yolov5-bifpn.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/hub/yolov5-fpn.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/hub/yolov5-p2.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/hub/yolov5-p34.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/hub/yolov5-p6.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/hub/yolov5-p7.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/hub/yolov5-panet.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/hub/yolov5l6.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/hub/yolov5m6.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/hub/yolov5n6.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/hub/yolov5s-LeakyReLU.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/hub/yolov5s-ghost.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/hub/yolov5s-transformer.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/hub/yolov5s6.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/hub/yolov5x6.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/segment/yolov5l-seg.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/segment/yolov5m-seg.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/segment/yolov5n-seg.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/segment/yolov5s-seg.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/segment/yolov5x-seg.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/tf.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/yolo.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/yolov5l.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/yolov5m.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/yolov5n.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/yolov5s.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/yolov5x.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/segment/predict.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/segment/train.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/segment/tutorial.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/segment/val.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tutorial.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/activations.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/augmentations.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/autoanchor.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/autobatch.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/aws/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/aws/mime.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/aws/resume.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/aws/userdata.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/callbacks.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/dataloaders.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/docker/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/docker/Dockerfile-arm64" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/docker/Dockerfile-cpu" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/downloads.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/flask_rest_api/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/flask_rest_api/example_request.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/flask_rest_api/restapi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/general.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/google_app_engine/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/google_app_engine/additional_requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/google_app_engine/app.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/loggers/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/loggers/clearml/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/loggers/clearml/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/loggers/clearml/clearml_utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/loggers/clearml/hpo.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/loggers/comet/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/loggers/comet/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/loggers/comet/comet_utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/loggers/comet/hpo.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/loggers/comet/optimizer_config.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/loggers/wandb/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/loggers/wandb/wandb_utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/loss.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/metrics.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/plots.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/segment/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/segment/augmentations.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/segment/dataloaders.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/segment/general.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/segment/loss.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/segment/metrics.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/segment/plots.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/torch_utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/triton.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/val.py" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2pVJtDBIpzWebd3gxiZrQveQE2v" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/home/lindaaaa/Desktop/Tutorial_2024-main/workspace/week2/视觉组/python_scripts",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/data/opencv" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-PY-243.21565.199" />
+        <option value="bundled-python-sdk-cab1f2013843-4ae2d6a61b08-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.21565.199" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d6d1e182-428d-4ec8-816a-b41a38a8d8c0" name="Changes" comment="" />
+      <created>1732845522977</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1732845522977</updated>
+      <workItem from="1732845524142" duration="3154000" />
+      <workItem from="1732886149698" duration="2153000" />
+      <workItem from="1732888700802" duration="1813000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
