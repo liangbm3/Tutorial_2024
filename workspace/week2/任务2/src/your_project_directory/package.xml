@@ -1,0 +1,21 @@
+<package format="2">
+  <name>your_project_directory</name> <!-- 包名更改为 your_project_directory -->
+  <version>0.0.0</version>
+  <description>ROS package for controlling a quadrotor in Gazebo using MAVROS and PX4</description>
+
+  <maintainer email="firefly@example.com">firefly</maintainer> <!-- 更改维护者信息为 firefly 的邮箱和名字 -->
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>mavros_msgs</build_depend>
+  <build_export_depend>roscpp</build_export_depend>
+  <build_export_depend>geometry_msgs</build_export_depend>
+  <build_export_depend>mavros_msgs</build_export_depend>
+  <exec_depend>roscpp</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>mavros_msgs</exec_depend>
+
+  <export></export>
+</package>
