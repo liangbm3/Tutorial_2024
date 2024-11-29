@@ -356,17 +356,17 @@ clean:
 ```
 conda create -n py3.10 python=3.10
 ```
-![python1](python1.png)
+![python1](image/python1.png)
 ### 4.3.2 查看已安装的Python虚拟环境
 ```
 conda env list
 ```
-![python2](python2.png)
+![python2](image/python2.png)
 ### 4.3.3 删除创建的虚拟环境
 ```
 conda remove -n py3.10 --all
 ```
-![python3](pyhton3.png)
+![python3](image/python3.png)
 
 # 5. yolov5
 ## **5.1 创建自己的环境**
@@ -375,7 +375,7 @@ conda create -n My_torch python=3.8
 ```
 ## **5.2 预权重模型**
 在gitee上下载了个代码模型，进入我的环境`My_torch`，用vscode打开`detect.py`，在`/data/images`中放入自己拍摄的照片，运行，在`/runs`里面查看检测的图片
-![test2](image/test2.jpg)
+![test2](yolov5/test2.jpg)
 
 
 # **6. 对接口的理解**
