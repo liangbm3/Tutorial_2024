@@ -1,0 +1,147 @@
+<?xml version="1.0" ?>
+<robot name = "little_car">
+    <link name = "base_link">
+        <!-- 小车模型，重心离地0.05, 视图为一个0.3×0.2×0.1的蓝色长方体，碰撞箱为0.21×0.3×0.11，质量为10 -->
+        <visual>
+            <geometry>
+                <box size="0.3 0.2 0.1"/>
+            </geometry>
+            <material name="blue">
+                <color rgba="0 0 1 1"/>
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <box size="0.21 0.3 0.1"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="10"/>
+            <origin xyz="0 0 0.05"/>
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
+    </link>
+
+    <!-- front wheel -->
+    <link name="wheel_1"> 
+        <!-- 轮子视图为一个0.05长，0.05半径的圆柱体，碰撞箱同上，质量为10 -->
+        <visual>
+            <geometry>
+                <cylinder radius="0.05" length="0.05"/>
+            </geometry>
+            <material name="red">
+                <color rgba="1 0 0 1"/>
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder radius="0.05" length="0.05"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="10"/>
+            <origin xyz="0.15 0.15 0"/>
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
+    </link>
+
+    <link name="wheel_2">
+        <!-- 轮子同上 -->
+        <visual>
+            <geometry>
+                <cylinder radius="0.05" length="0.05"/>
+            </geometry>
+            <material name="red">
+                <color rgba="1 0 0 1"/>
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder radius="0.05" length="0.05"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="10"/>
+            <origin xyz="0.15 -0.15 0"/>
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
+    </link>
+
+    <link name="wheel_3">
+        <!-- 轮子同上 -->
+        <visual>
+            <geometry>
+                <cylinder radius="0.05" length="0.05"/>
+            </geometry>
+            <material name="red">
+                <color rgba="1 0 0 1"/>
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder radius="0.05" length="0.05"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="10"/>
+            <origin xyz="-0.15 -0.15 0"/>
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
+    </link>
+
+    <link name="wheel_4">
+        <!-- 轮子同上 -->
+        <visual>
+            <geometry>
+                <cylinder radius="0.05" length="0.05"/>
+            </geometry>
+            <material name="red">
+                <color rgba="1 0 0 1"/>
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder radius="0.05" length="0.05"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="10"/>
+            <origin xyz="-0.15 0.15 0"/>
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
+    </link>
+
+    <!-- 连接基座和车轮的关节 -->
+    <joint name="base_to_wheel_1" type="continuous">
+        <parent link="base_link"/>
+        <child link="wheel_1"/>
+        <axis xyz="0 0 1"/>
+        <origin xyz="0.15 -0.15 0" rpy="1.5708 1.5708 0"/>  
+        <joint_properties damping="20.0" friction="20.0"/>
+    </joint>
+
+    <joint name="base_to_wheel_2" type="continuous">
+        <parent link="base_link"/>
+        <child link="wheel_2"/>
+        <axis xyz="0 0 1"/>
+        <origin xyz="0.15 0.15 0" rpy="1.5708 1.5708 0"/>  
+        <joint_properties damping="20.0" friction="20.0"/>
+    </joint>
+
+    <joint name="base_to_wheel_3" type="continuous">
+        <parent link="base_link"/>
+        <child link="wheel_3"/>
+        <axis xyz="0 0 1"/>
+        <origin xyz="-0.15 -0.15 0" rpy="1.5708 1.5708 0"/>  
+        <joint_properties damping="20.0" friction="20.0"/>
+    </joint>
+
+    <joint name="base_to_wheel_4" type="continuous">
+        <parent link="base_link"/>
+        <child link="wheel_4"/>
+        <axis xyz="0 0 1"/>
+        <origin xyz="-0.15 0.15 0" rpy="1.5708 1.5708 0"/>  
+        <joint_properties damping="20.0" friction="20.0"/>
+    </joint>
+
+</robot>
