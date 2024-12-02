@@ -118,6 +118,27 @@ labelImg
 - 注意，直接安装二进制文件印象中好像只支持默认的人工标注功能，要想有导入模型进行自动化标注，需要克隆源码进行编译
 - 编译时也有 GPU 加速的版本和只使用 CPU 的版本，按需下载安装二进制文件或者编译即可
 
+#### 配置自动标注
+
+首先参考文档克隆源码并且配置好环境之后，找到红框的 `auto_labeling` 文件夹，然后在这里面复制一份 `yolov5s.yaml` 的配置文件作为蓝图，保留其中 `type` 和 `names` 两个字段，然后修改其中的 `model_path` 为你自己的模型路径
+
+![alt text](image/image-a.png)
+
+然后模仿 `yolov5s.yaml` 的配置文件把 `classes` 字段改为和你自己的设置类别种类一致即可
+
+注意这里使用的模型权重文件只能使用 `onnx` 格式的，所以需要将 `yolov5` 的 `pt` 权重文件转换为 ` onnx ` 格式
+
+转换的方法也是很简单，在 `yolov5` 的文件夹下面有一个 `export.py` 文件，要运行它首先要安装好 `onnx` 和 `onnx_runtime` 这两个包
+
+**注意**，这两个包可以选择 CPU 版本的，也可以选择 GPU 版本的，并且使用 CUDA GPU 的话还有版本匹配问题，具体参见官方文档
+-  [ONNX -Ultralytics YOLO 文档](https://docs.ultralytics.com/zh/integrations/onnx/#usage)
+-  [Compatibility | onnxruntime](https://onnxruntime.ai/docs/reference/compatibility.html)
+
+在安装好环境之后以 ` python export. py  --include torchscript onnx` 运行这个文件就可以将 `pt` 文件转换为 `torchscript` 文件和 `onnx` 文件
+
+**注意**，在以后的模型训练中，**最好可以修改 `train.py` 把保存的模型结果改为直接保存模型参数 ` state dicts`**，尽量不要保存整个模型，否则在二次加载模型会出现下面的 issue
+- [ModuleNotFoundError: No module named 'models' · Issue #18325 · pytorch/pytorch](https://github.com/pytorch/pytorch/issues/18325) 
+- [torch.load() requires model module in the same folder · Issue #3678 · pytorch/pytorch](https://github.com/pytorch/pytorch/issues/3678)
 
 视频教程
 - [【YOLO】X-AnyLabeling自动标注工具,AI帮你解放双手_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV12c46eUE4o/?spm_id_from=333.337.search-card.all.click&vd_source=9c85d181a345808c304a6fa2780bb4da)
