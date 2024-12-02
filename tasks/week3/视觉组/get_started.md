@@ -19,8 +19,6 @@ pip install -r requirements.txt  # install dependencies
 
 ### 部署GPU版本
 
-注意，如果你使用的是 WSL 版本的话，**不需要在WSL中重新安装cuda toolkit和cuDNN 就可以使用 pytorch 的硬件加速，你只需要确保在 Windows 中安装即可**。具体参考 Nvidia 官方文档 [CUDA on WSL](https://docs.nvidia.com/cuda/wsl-user-guide/index.html)
-- 如果安装了反而会引发不必要的冲突问题
 
 
 **这个的前提是你的电脑拥有NVidia显卡！！！**
@@ -56,6 +54,81 @@ pip install -r requirements.txt  # install dependencies
     pip install -r requirements.txt  # install dependencies
     ```
 *Tips:如果pip下载缓慢可以换源，上网自行搜索教程*
+
+## 使用 WSL 进行部署的注意事项
+
+### 使用 GPU 加速的 yolo 部署准备
+
+注意，如果你使用的是**最新版本的 WSL 版本的话**，就暂时不需要在WSL中重新安装cuda toolkit和cuDNN 就可以使用 pytorch 的硬件加速，你只需要确保在 Windows 中安装即可**。这里具体的情况参考 Nvidia 官方文档 [CUDA on WSL](https://docs.nvidia.com/cuda/wsl-user-guide/index.html)
+- 最新版本的 WSL 如果在 WSL 中安装不匹配的 cuda-toolkit 反而会引发不必要的冲突问题
+
+
+WSL目前的大版本是 WSL2，在大版本内更新 WSL 小版本的命令如下
+```bash
+wsl --update
+```
+更多命令参考 [WSL 的基本命令 | Microsoft Learn](https://learn.microsoft.com/zh-cn/windows/wsl/basic-commands)
+
+
+
+在 windows 主机端配置好 CUDA 驱动后，可以在 WSL 终端中使用下面的命令进行硬件映射检测
+```bash
+>> nvidia-smi
+```
+正常的话结果应该是这样的
+```bash
+Mon Dec  2 16:47:41 2024
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 560.35.02              Driver Version: 560.94         CUDA Version: 12.6     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+| 0  NVIDIA GeForce RTX 5090 Ti Super On  |   00000000:01:00.0  On |                  N/A |
+|  0%   30C    P8              5W /  165W |     870MiB /  16380MiB |      2%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A       722      G   /Xwayland                                   N/A      |
+```
+并且可以使用这个指令来查看WSL的图形化窗口是否是由主机的显卡渲染的
+```bash
+>> glxinfo | grep "OpenGL"
+```
+如果一切正常的话，应该显示的是主机中显卡的信息
+```bash
+OpenGL vendor string: Microsoft Corporation
+OpenGL renderer string: D3D12 (NVIDIA GeForce RTX 5090 Ti Super)
+OpenGL core profile version string: 3.3 (Core Profile) Mesa 21.2.6
+OpenGL core profile shading language version string: 3.30
+OpenGL core profile context flags: (none)
+OpenGL core profile profile mask: core profile
+```
+
+
+
+### 使用 WSL 主机连接摄像头会有点卡
+
+### 在 WSL 中使用 ROS1 的 rqt 图形化调试窗口注意事项
+
+有时候在运行 `rqt` 相关命令的时候，显示的窗口框框和内容会发生错位，比如下面的例子
+![alt text](image/image-b.png)
+这个时候无论鼠标怎么点击或者拖动内容都没有响应，这时候其实是该 `rqt` 命令的缓存爆了
+
+清除缓存即可
+```
+>> rqt_plot --clear-config
+```
+
+这里的例子是使用 `rqt_plot`，对于其他的 `rqt` 命令也是一样的，只要在命令后面加上 `--clear-config` 就可以清除缓存
+
+
 
 ## 深度学习基本概念介绍
 
@@ -139,6 +212,10 @@ labelImg
 **注意**，在以后的模型训练中，**最好可以修改 `train.py` 把保存的模型结果改为直接保存模型参数 ` state dicts`**，尽量不要保存整个模型，否则在二次加载模型会出现下面的 issue
 - [ModuleNotFoundError: No module named 'models' · Issue #18325 · pytorch/pytorch](https://github.com/pytorch/pytorch/issues/18325) 
 - [torch.load() requires model module in the same folder · Issue #3678 · pytorch/pytorch](https://github.com/pytorch/pytorch/issues/3678)
+
+pytorch 官方文档推荐的最佳实践是保存模型参数，而不是整个模型，这样可以避免很多问题
+- [Saving and Loading Models — PyTorch Tutorials 2.5.0+cu124 documentation](https://pytorch.org/tutorials/beginner/saving_loading_models.html)
+ 
 
 视频教程
 - [【YOLO】X-AnyLabeling自动标注工具,AI帮你解放双手_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV12c46eUE4o/?spm_id_from=333.337.search-card.all.click&vd_source=9c85d181a345808c304a6fa2780bb4da)
