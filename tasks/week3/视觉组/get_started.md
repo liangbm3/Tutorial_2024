@@ -18,6 +18,11 @@ pip install -r requirements.txt  # install dependencies
 ```
 
 ### 部署GPU版本
+
+注意，如果你使用的是 WSL 版本的话，**不需要在WSL中重新安装cuda toolkit和cuDNN 就可以使用 pytorch 的硬件加速，你只需要确保在 Windows 中安装即可**。具体参考 Nvidia 官方文档 [CUDA on WSL](https://docs.nvidia.com/cuda/wsl-user-guide/index.html)
+- 如果安装了反而会引发不必要的冲突问题
+
+
 **这个的前提是你的电脑拥有NVidia显卡！！！**
 在VMware中，虚拟机一般是无法直接调用实体机的显卡的。所以只能使用WSL和双系统。或者还有一个方案是在Windows和在VMware中同时部署，在Window中完成训练，在VMware的虚拟机中完成推理。
 
