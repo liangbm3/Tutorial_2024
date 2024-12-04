@@ -112,3 +112,27 @@
 
 ### 仿真结果：
 
+![](https://raw.githubusercontent.com/skoyhs/Tutorial_2024/refs/heads/main/workspace/Task3/images/Screenshot%20from%202024-12-04%2015-25-21.png)
+
+![](https://raw.githubusercontent.com/skoyhs/Tutorial_2024/refs/heads/main/workspace/Task3/images/Screenshot%20from%202024-12-04%2015-26-04.png)
+
+![](https://raw.githubusercontent.com/skoyhs/Tutorial_2024/refs/heads/main/workspace/Task3/images/Screenshot%20from%202024-12-04%2015-27-14.png)
+
+###  心得：
+
+1. 首先就是如何控制三架无人机的轨迹，我刚开始，只设置了一个位置回调函数，这样的话在仿真的时候就只有一架无人机按照规定的轨迹飞行，而其他无人机要么没起飞，要么起飞后直线飞行一段后，就return了。这样的原因是代码中没有及时订阅到当前所有无人机的位置状态，所以其他无人机位置未知，就只能返回起飞点。所以要设置三个回调函数，保证所有无人机都能实时控制。
+2. 这里的话，我实现的思路是通过订阅当前无人机的位置状态来实现目标点的转换，其实还可以通过代码控制无人机的飞行轨迹，这时候就要借用一个状态机来实现，但是我偷懒就没有用这个思路。
+3. 如果想要控制更多的无人机，就需要在`multi_uav_mavros_sitl.launch`进行修改，添加要增加的无人机ID等信息，最多好像是十架无人机，我这里就默认三架了。
+
+### 任务完成情况：
+
+**已完成：**
+
+1. 成功运行多个无人机仿真环境	
+2. 成功在gazebo中完成多台无人机起飞	
+3. 控制多台无人机完成飞行轨迹
+4. markdown文档说明步骤和遇到的问题以及个人理解
+
+**未完成：**
+
+无
