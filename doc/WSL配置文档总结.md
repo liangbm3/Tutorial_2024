@@ -305,7 +305,7 @@ lsusb
 sudo apt update
 sudo apt install neofetch
 ```
-![alt text](image.png)
+![alt text](image/WSL_3.png)
 
 恭喜你，你已经成功地让 WSL 2 识别到了主机的 USB 摄像头，可以狠狠纪念一下啦
 
