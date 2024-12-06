@@ -298,7 +298,16 @@ lsusb
 
 第一次识别不了是因为主机的摄像头没有用 `usbip` 工具映射到 WSL 中，所以 WSL 无法识别到摄像头设备
 
+### 9.整点骚活
 
+如果想在终端中用一种比较好看的方式来查看系统信息的话使用 `neofetch`
+```shell
+sudo apt update
+sudo apt install neofetch
+```
+![alt text](image.png)
+
+恭喜你，你已经成功地让 WSL 2 识别到了主机的 USB 摄像头，可以狠狠纪念一下啦
 
 
 ## 使用 WSL 部署 GPU 版本的 yolo 的注意事项
