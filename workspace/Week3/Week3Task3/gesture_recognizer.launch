@@ -1,0 +1,13 @@
+<launch>
+    <!-- 启动 camera_publisher.py 节点 -->
+    <node name="camera_publisher" pkg="opencv_ros_camera" type="camera_publisher.py" output="screen" />
+
+    <!-- 启动 gesture_publisher 节点 -->
+    <node name="gesture_publisher" pkg="gesture_recognizer" type="gesture_publisher" output="screen" />
+
+    <!-- 包含 little_car 的 launch 文件 -->
+    <include file="$(find little_car)/launch/little_car.launch" />
+
+    <!-- 如果需要设置额外的参数，可以使用 <param> 标签 -->
+    <!-- <param name="parameter_name" value="parameter_value" /> -->
+</launch>
