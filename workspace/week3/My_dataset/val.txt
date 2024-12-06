@@ -1,0 +1,2 @@
+./images/004.jpg
+./images/007.jpg
