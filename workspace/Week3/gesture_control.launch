@@ -1,0 +1,7 @@
+<launch>
+    <!-- 启动手势识别节点 -->
+    <node pkg="gesture_control" type="gesture_node.py" name="gesture_node" output="screen" />
+    
+    <!-- 启动车控制节点 -->
+    <node pkg="gesture_control" type="car_controller.py" name="car_controller" output="screen" />
+</launch>
