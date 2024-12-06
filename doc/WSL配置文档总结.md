@@ -4,7 +4,7 @@
 # WSL 配置文档总结
 Author： @[skyswordx](https://github.com/skyswordx)
 
-Revise: 
+Revise: @[treeofwind](https://github.com/treeofwind)@[silence-breaker](https://github.com/silence-breaker)
 
 
 ## WSL 简介和安装
